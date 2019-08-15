@@ -1,0 +1,15 @@
+<phpunit
+        backupGlobals="true"
+        colors="true">
+    <testsuites>
+        <testsuite name="unittests">
+            <directory suffix="test.php">/Applications/MAMP/htdocs/cksubs/tests</directory>
+            <exclude>./_ci_phpunit_test/</exclude>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">/Applications/MAMP/htdocs/cksubs/tests</directory>
+        </whitelist>
+    </filter>
+</phpunit>
