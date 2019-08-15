@@ -9,7 +9,7 @@
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">/Applications/MAMP/htdocs/cksubs/tests</directory>
+            <directory suffix=".php">/Applications/MAMP/htdocs/cksubs/src</directory>
         </whitelist>
     </filter>
 </phpunit>
