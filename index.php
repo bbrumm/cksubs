@@ -1,18 +1,22 @@
 <?php
 require_once('layout/header.php');
-
+require_once('src/controller/APIController.php');
 ?>
-<form>
-   <input type="submit" name="downloadSubscribers" value="Download Subscribers" />
+<form method="POST">
+   <input type="submit" name="submitAction" value="Download Subscribers" />
 </form>
 
-<p>
-    <div>Status:</div>
-    <div id="statusValue">Not Started</div>
 
-</p>
+<?php
 
-<?
+if(isset($_POST['submitAction'])) {
+    if ($_POST['submitAction'] == 'Download Subscribers') {
+        $apiController = new APIController();
+        //echo "Subscriber get";
+        $apiController->getAllSubscribers();
+    }
+}
+
 
 
 require_once('layout/footer.php');

@@ -4,14 +4,7 @@ ini_set('display_errors', 1);
 
 require_once('examples/layout/header.php');
 
-//Must be in this specific order
-require_once("src/Connector.php");
-require_once("src/ConvertKit.php");
-require_once("src/Subscriber.php");
-require_once("src/Tag.php");
-require_once("src/Sequence.php");
 
-require_once('examples/config.php');
 
 $ck = new \ConvertKit\ConvertKit($apiKey, $apiSecretKey);
 
