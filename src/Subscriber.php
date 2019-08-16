@@ -17,8 +17,8 @@ class Subscriber extends ConvertKit {
         $this->request_url = "{$this->url_base}/subscribers/";
     }
 
-    public function showall() {
-        $request_url = $this->request_url . '?api_secret='.$this->api_secret_key;
+    public function showall($pageNumber) {
+        $request_url = $this->request_url . '?api_secret='.$this->api_secret_key.'&page='.$pageNumber;
         $response = $this->curl($request_url);
         return $response;
     }
