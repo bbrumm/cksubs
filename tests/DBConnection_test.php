@@ -1,11 +1,15 @@
 <?php
 require_once "src/model/DBConnection.php";
+require '../vendor/autoload.php';
+
 class DBConnection_test extends \PHPUnit\Framework\TestCase
 {
     const INVALID_ARGUMENT_EXCEPTION = "InvalidArgumentException";
 
     public function setUp() {
-
+        $rootFolder = __DIR__ . "/../";
+        $dotenv = Dotenv\Dotenv::create($rootFolder);
+        $dotenv->load();
     }
 
     public function test_ValidQuery() {
@@ -19,7 +23,7 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
     }
 
     public function test_InvalidSyntax() {
-        $this->expectException(Exception::class);
+        $this->expectException("Exception");
         $queryString = "SELECT;";
 
         $dbConnection = new DBConnection();

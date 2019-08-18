@@ -6,6 +6,9 @@ require_once('src/controller/APIController.php');
 $dotenv = Dotenv\Dotenv::create(__DIR__);
 $dotenv->load();
 
+echo "<pre>";
+print_r($_ENV);
+echo "</pre>";
 
 ?>
 <form method="POST">

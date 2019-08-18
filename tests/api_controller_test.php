@@ -1,6 +1,7 @@
 <?php
 require_once("src/controller/APIController.php");
 require_once("src/model/ArraySubscriberResponse.php");
+require '../vendor/autoload.php';
 
 class APIControllerTest extends \PHPUnit\Framework\TestCase
 {

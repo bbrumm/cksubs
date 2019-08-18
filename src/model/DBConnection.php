@@ -9,14 +9,18 @@
 class DBConnection {
 
     public function __construct() {
-
+        $rootFolder = __DIR__ . "/../../";
+        $dotenv = Dotenv\Dotenv::create($rootFolder);
+        $dotenv->load();
     }
 
     //TODO: Change this to use an environment variable because it's different in local vs travis
     public function createConnection() {
         $dbServername = "localhost";
         $dbUsername = "root";
-        if ($_ENV["ENVIRONMENT"] == "dev") {
+        if(!isset($_ENV["ENVIRONMENT"])) {
+            $dbPassword = "root";
+        } elseif ($_ENV["ENVIRONMENT"] == "dev") {
             $dbPassword = "root";
         } elseif ($_ENV["ENVIRONMENT"] == "test") {
             $dbPassword = "";
