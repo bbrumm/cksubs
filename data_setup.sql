@@ -1,3 +1,5 @@
+USE ck_subscribers;
+
 CREATE TABLE subscriber (
   subscriber_id int(10) DEFAULT NULL,
   first_name varchar(200) DEFAULT NULL,
