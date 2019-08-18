@@ -1,6 +1,6 @@
 <?php
 require_once 'ISubscriberResponse.php';
-require_once('src/config.php');
+//require_once('src/config.php');
 
 class APISubscriberResponse implements ISubscriberResponse {
 
