@@ -4,7 +4,7 @@ php:
 services:
 - mysql
 before_install:
-- mysql -e 'CREATE DATABASE IF NOT EXISTS ck_subscribers;'
+- mysql -e 'CREATE DATABASE IF NOT EXISTS ck_subscribers; USE ck_subscribers;'
 before_script:
 #- echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 - composer install
