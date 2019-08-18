@@ -1,6 +1,5 @@
 <?php
 require_once "src/model/DBConnection.php";
-require '../vendor/autoload.php';
 
 class DBConnection_test extends \PHPUnit\Framework\TestCase
 {

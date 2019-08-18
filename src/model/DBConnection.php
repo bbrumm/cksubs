@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: BB
- * Date: 17/6/19
- * Time: 5:00 AM
- */
 
 class DBConnection {
 
