@@ -12,10 +12,15 @@ class DBConnection {
 
     }
 
+    //TODO: Change this to use an environment variable because it's different in local vs travis
     public function createConnection() {
         $dbServername = "localhost";
         $dbUsername = "root";
-        $dbPassword = "root";
+        if ($_ENV["ENVIRONMENT"] == "dev") {
+            $dbPassword = "root";
+        } elseif ($_ENV["ENVIRONMENT"] == "test") {
+            $dbPassword = "";
+        }
 
         try {
             $conn = new PDO("mysql:host=$dbServername;dbname=ck_subscribers", $dbUsername, $dbPassword);
