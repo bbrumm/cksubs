@@ -3,12 +3,12 @@ php:
 - 7.2
 services:
 - mysql
-#before_install:
-#- mysql -e 'CREATE DATABASE IF NOT EXISTS ckapi;'
+before_install:
+- mysql -e 'CREATE DATABASE IF NOT EXISTS ck_subscribers;'
 before_script:
-#- echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH
-#  PRIVILEGES;\n" | mysql -u root
+- echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 - composer install
+- cat data_setup.sql | mysql -u root -proot
 script: "vendor/phpunit/phpunit/phpunit --coverage-clover build/logs/clover.xml"
 after_success:
 - php vendor/bin/php-coveralls -v --coverage_clover build/logs/clover.xml
