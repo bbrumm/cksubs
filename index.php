@@ -6,7 +6,6 @@ require_once('src/controller/APIController.php');
 $dotenv = Dotenv\Dotenv::create(__DIR__);
 $dotenv->load();
 
-echo "Super: " . getenv('SECRET_KEY');
 
 ?>
 <form method="POST">
