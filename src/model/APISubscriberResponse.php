@@ -9,8 +9,8 @@ class APISubscriberResponse implements ISubscriberResponse {
     }
 
     public function getPageOfSubscribers($pageNumber) {
-        $apiKey = CONVERTKIT_PUBLIC_KEY;
-        $apiSecretKey = CONVERTKIT_SECRET_KEY;
+        $apiKey = getenv("CONVERTKIT_PUBLIC_KEY");
+        $apiSecretKey = getenv("CONVERTKIT_SECRET_KEY");
         $ck = new \ConvertKit\ConvertKit($apiKey, $apiSecretKey);
         $subscriber = $ck->subscriber();
 

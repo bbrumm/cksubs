@@ -5,7 +5,7 @@ require_once("src/ConvertKit.php");
 require_once("src/Subscriber.php");
 require_once("src/Tag.php");
 require_once("src/Sequence.php");
-require_once('config.php');
+require_once('src/config.php');
 
 require_once('src/model/APISubscriberResponse.php');
 require_once("src/model/DBConnection.php");

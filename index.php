@@ -9,6 +9,10 @@ require_once('src/controller/APIController.php');
 
 <?php
 
+echo "ENV: <pre>";
+print_r(getenv());
+echo "</pre>";
+
 if(isset($_POST['submitAction'])) {
     if ($_POST['submitAction'] == 'Download Subscribers') {
         $apiController = new APIController();
