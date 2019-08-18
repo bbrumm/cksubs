@@ -7,43 +7,39 @@ require_once("src/Tag.php");
 require_once("src/Sequence.php");
 require_once('config.php');
 
+require_once('src/model/APISubscriberResponse.php');
 require_once("src/model/DBConnection.php");
 
 class APIController {
 
-
     public function getAllSubscribers() {
-        $apiKey = CONVERTKIT_PUBLIC_KEY;
-        $apiSecretKey = CONVERTKIT_SECRET_KEY;
+        $apiSubscriberResponse = new APISubscriberResponse();
+        $this->loadSubscribers($apiSubscriberResponse);
+    }
 
-        $ck = new \ConvertKit\ConvertKit($apiKey, $apiSecretKey);
-        $subscriber = $ck->subscriber();
-
+    public function loadSubscribers(ISubscriberResponse $subscriberResponse) {
         $dbConnection = new DBConnection();
         $conn = $dbConnection->createConnection();
-
         $dbConnection->resetSubscriberTable($conn);
-
-        $this->log("Start getAllSubscribers loop");
 
         $pageNumberCount = 1;
         for ($pageNumOfThisAPICall = 1; $pageNumOfThisAPICall <= $pageNumberCount; $pageNumOfThisAPICall++) {
-            $response = $subscriber->showall($pageNumOfThisAPICall);
+            $response = $subscriberResponse->getPageOfSubscribers($pageNumOfThisAPICall);
             $this->insertAllSubscribers($response, $conn);
 
-            //Increase page num to look at
-            $pageNumberCount = $response->total_pages;
+            $pageNumberCount = $this->updateTotalPageNumberFromAPIResponse($response);
             $this->log("Page ". $pageNumOfThisAPICall ." of ". $pageNumberCount ." completed");
 
         }
-
-        $this->log("End getAllSubscribers loop");
     }
 
+    private function updateTotalPageNumberFromAPIResponse($response) {
+        return $response->total_pages;
+    }
+
+
     private function insertAllSubscribers($response, $conn) {
-
         $insertSubscriberQuery = $this->convertSubscriberArrayToSQL($response->subscribers);
-
         $this->insertSubscribers($conn, $insertSubscriberQuery);
     }
 

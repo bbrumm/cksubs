@@ -28,6 +28,7 @@ class DBConnection {
 
     }
 
+    //TODO: Refactor these functions to make the runQuery less confusing.
     public function resetSubscriberTable($dbConnection) {
         $truncateTable = "TRUNCATE TABLE subscriber;";
         $this->runQuery($dbConnection, $truncateTable);
@@ -46,6 +47,7 @@ class DBConnection {
         } catch (Exception $e) {
             echo "Query failed: " . $e->getMessage();
             echo "Query: <br />" . $queryString . "<br />";
+            throw $e;
         }
     }
 
