@@ -16,7 +16,7 @@ class DBConnection {
             $dbPassword = "root";
         } elseif ($_ENV["ENVIRONMENT"] == "dev") {
             $dbPassword = "root";
-        } elseif ($_ENV["ENVIRONMENT"] == "test") {
+        } elseif ($_ENV["ENVIRONMENT"] == "travistest") {
             $dbPassword = "";
         }
 
