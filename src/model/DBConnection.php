@@ -19,12 +19,15 @@ class DBConnection {
     public function createConnection() {
         $dbServername = "localhost";
         $dbUsername = "root";
+        $dbPassword = "root";
         //TODO refactor this into a public method
-        if(!isset($_ENV["ENVIRONMENT"])) {
+        //if(!isset($_ENV["ENVIRONMENT"])) {
+        //    $dbPassword = "root";
+        //} elseif ($_ENV["ENVIRONMENT"] == "dev") {
+        //echo "ENV: " . getenv("ENVIRONMENT");
+        if (getenv("ENVIRONMENT") == "dev") {
             $dbPassword = "root";
-        } elseif ($_ENV["ENVIRONMENT"] == "dev") {
-            $dbPassword = "root";
-        } elseif ($_ENV["ENVIRONMENT"] == "travistest") {
+        } elseif (getenv("ENVIRONMENT") == "travistest") {
             $dbPassword = "";
         }
 
