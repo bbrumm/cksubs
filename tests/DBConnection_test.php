@@ -7,7 +7,8 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
 
     public function setUp() {
         //TODO refactor this into a public method
-        if(!isset($_ENV["ENVIRONMENT"]) || $_ENV["ENVIRONMENT"] == "dev") {
+
+        if($this->isCurrentEnvironmentDev()) {
             $rootFolder = __DIR__ . "/../";
             $dotenv = Dotenv\Dotenv::create($rootFolder);
             $dotenv->load();
@@ -31,6 +32,11 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
         $dbConnection = new DBConnection();
         $conn = $dbConnection->createConnection();
         $dbConnection->runQuery($conn, $queryString);
+    }
+
+    public function isCurrentEnvironmentDev() {
+        //return ($_SERVER["HTTP_HOST"] == "localhost:8888");
+        return (getenv("ENVIRONMENT") == "dev");
     }
 
 }
