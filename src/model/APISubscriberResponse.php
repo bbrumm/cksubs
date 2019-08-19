@@ -9,10 +9,8 @@ class APISubscriberResponse implements ISubscriberResponse {
     }
 
     public function getPageOfSubscribers($pageNumber) {
-        echo "ENV: ";
-        print_r($_ENV);
-        $apiKey = $_ENV["CK_API_KEY"];
-        $apiSecretKey = $_ENV["CK_API_SECRET"];
+        $apiKey = getenv("CK_API_KEY");
+        $apiSecretKey = getenv("CK_API_SECRET");
         $ck = new \ConvertKit\ConvertKit($apiKey, $apiSecretKey);
         $subscriber = $ck->subscriber();
 
