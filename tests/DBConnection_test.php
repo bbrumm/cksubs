@@ -6,9 +6,12 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
     const INVALID_ARGUMENT_EXCEPTION = "InvalidArgumentException";
 
     public function setUp() {
-        $rootFolder = __DIR__ . "/../";
-        $dotenv = Dotenv\Dotenv::create($rootFolder);
-        $dotenv->load();
+        //TODO refactor this into a public method
+        if(!isset($_ENV["ENVIRONMENT"]) || $_ENV["ENVIRONMENT"] == "dev") {
+            $rootFolder = __DIR__ . "/../";
+            $dotenv = Dotenv\Dotenv::create($rootFolder);
+            $dotenv->load();
+        }
     }
 
     public function test_ValidQuery() {

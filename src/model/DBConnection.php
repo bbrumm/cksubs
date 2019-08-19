@@ -12,6 +12,7 @@ class DBConnection {
     public function createConnection() {
         $dbServername = "localhost";
         $dbUsername = "root";
+        //TODO refactor this into a public method
         if(!isset($_ENV["ENVIRONMENT"])) {
             $dbPassword = "root";
         } elseif ($_ENV["ENVIRONMENT"] == "dev") {
