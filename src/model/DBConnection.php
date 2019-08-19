@@ -3,9 +3,16 @@
 class DBConnection {
 
     public function __construct() {
-        $rootFolder = __DIR__ . "/../../";
-        $dotenv = Dotenv\Dotenv::create($rootFolder);
-        $dotenv->load();
+        if($this->isCurrentEnvironmentDev()) {
+            $rootFolder = __DIR__ . "/../../";
+            $dotenv = Dotenv\Dotenv::create($rootFolder);
+            $dotenv->load();
+        }
+    }
+
+    private function isCurrentEnvironmentDev() {
+        //return ($_SERVER["HTTP_HOST"] == "localhost:8888");
+        return (getenv("ENVIRONMENT") == "dev");
     }
 
     //TODO: Change this to use an environment variable because it's different in local vs travis

@@ -6,7 +6,7 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
     const INVALID_ARGUMENT_EXCEPTION = "InvalidArgumentException";
 
     public function setUp() {
-        //TODO refactor this into a public method
+
 
         if($this->isCurrentEnvironmentDev()) {
             $rootFolder = __DIR__ . "/../";
@@ -34,7 +34,8 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
         $dbConnection->runQuery($conn, $queryString);
     }
 
-    public function isCurrentEnvironmentDev() {
+    //TODO refactor this into a public method as it is duplicated
+    private function isCurrentEnvironmentDev() {
         //return ($_SERVER["HTTP_HOST"] == "localhost:8888");
         return (getenv("ENVIRONMENT") == "dev");
     }
