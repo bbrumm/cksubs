@@ -57,10 +57,10 @@ class DBConnection {
     public function runQuery($dbConnection, $queryString) {
         try {
             $dbConnection->query($queryString);
-            echo "Query run: <br />" . $queryString . "<br />";
+            //echo "Query run: <br />" . $queryString . "<br />";
         } catch (Exception $e) {
-            echo "Query failed: " . $e->getMessage();
-            echo "Query: <br />" . $queryString . "<br />";
+            //echo "Query failed: " . $e->getMessage();
+            //echo "Query: <br />" . $queryString . "<br />";
             throw $e;
         }
     }
