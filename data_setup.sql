@@ -10,3 +10,8 @@ CREATE TABLE subscriber (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE tag (
+  tag_id int(10) DEFAULT NULL,
+  tag_name varchar(200) DEFAULT NULL,
+  KEY idx_tag_id (tag_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
