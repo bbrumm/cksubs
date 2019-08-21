@@ -32,6 +32,42 @@ class APIController {
 
     }
 
+    public function getTagsForDisplay() {
+        $dbConnection = new DBConnection();
+        $conn = $dbConnection->createConnection();
+
+        $tagsInDatabase = $this->loadTagsFromDatabase($conn);
+        return $this->prepareTagsForDisplay($tagsInDatabase);
+    }
+
+    private function prepareTagsForDisplay($tagsInDatabase) {
+        $outputData = "<table class='table'>";
+        $outputData .= "<thead class='thead-dark'>";
+        $outputData .= "<tr>";
+        $outputData .= "<th scope='col'>Tag ID</th>";
+        $outputData .= "<th scope='col'>Tag Name</th>";
+        $outputData .= "<th scope='col'>Map</th>";
+        $outputData .= "</tr>";
+        $outputData .= "</thead>";
+        $outputData .= "<tbody>";
+        foreach ($tagsInDatabase as $tagInDatabase) {
+            $outputData .= "<tr>";
+            $outputData .= "<td>". $tagInDatabase['tag_id'] ."</td>";
+            $outputData .= "<td>". $tagInDatabase['tag_name'] ."</td>";
+            $checkedValue = "";
+            if ($tagInDatabase['tag_map_id'] == 1) {
+                $checkedValue = "checked";
+            }
+            $outputData .= "<td><div class='form-check'>".
+                "<input class='form-check-input' type='checkbox' value='' id='defaultCheck1' ". $checkedValue .">".
+                "</div></td>";
+            $outputData .= "</tr>";
+        }
+        $outputData .= "</tbody>";
+        $outputData .= "</table>";
+        return $outputData;
+    }
+
     public function loadSubscribers(ISubscriberResponse $subscriberResponse) {
         file_put_contents(
             'progress.json',
@@ -70,7 +106,6 @@ class APIController {
 
         $dbConnection = new DBConnection();
         $conn = $dbConnection->createConnection();
-        $dbConnection->resetTagTable($conn);
 
         $this->updateJsonWithTagsProgress(0.3);
         $this->insertAllTagsFromAPI($tagResponse, $conn);
@@ -80,7 +115,10 @@ class APIController {
 
     private function insertAllTagsFromAPI(ITagResponse $tagResponse, $conn) {
         $response = $tagResponse->getPageOfTags();
-        $this->insertAllTags($response, $conn);
+        $newTagArray = $this->determineNewTags($response, $conn);
+        if(count($newTagArray) > 0) {
+            $this->insertNewTags($newTagArray, $conn);
+        }
         $this->updateJsonWithTagsProgress(1);
 
     }
@@ -111,8 +149,58 @@ class APIController {
         $this->insertSubscribers($conn, $insertSubscriberQuery);
     }
 
-    private function insertAllTags($response, $conn) {
-        $insertTagQuery = $this->convertTagArrayToSQL($response->tags);
+    private function determineNewTags($response, $conn) {
+        $tagsFromAPI = $response->tags;
+        //echo "API TAGS:";
+        //print_r($tagsFromAPI);
+        $tagsFromDatabase = $this->loadExistingTagsFromDatabase($conn);
+        return $this->findTagsFromAPINotInDatabase($tagsFromAPI, $tagsFromDatabase);
+    }
+
+    private function loadExistingTagsFromDatabase(PDO $conn) {
+        $queryString = "SELECT tag_id AS id, tag_name AS name FROM tag;";
+        $queryResult = $conn->query($queryString);
+        $resultArray = $queryResult->fetchAll(PDO::FETCH_ASSOC);
+
+        //echo "RESULT: ";
+        //print_r($resultArray);
+        return $resultArray;
+    }
+
+    private function loadTagsFromDatabase(PDO $conn) {
+        $queryString = "SELECT t.tag_id, t.tag_name, t.tag_map_id FROM tag t ORDER BY t.tag_map_id, t.tag_name;";
+        $queryResult = $conn->query($queryString);
+        $resultArray = $queryResult->fetchAll(PDO::FETCH_ASSOC);
+        return $resultArray;
+    }
+
+    private function loadPossibleMapValues(PDO $conn) {
+        $queryString = "SELECT tag_map_id, map_value FROM tag_map ORDER BY tag_map_id;";
+        $queryResult = $conn->query($queryString);
+        $resultArray = $queryResult->fetchAll(PDO::FETCH_ASSOC);
+        return $resultArray;
+    }
+
+    private function findTagsFromAPINotInDatabase($tagsFromAPI, $tagsFromDatabase) {
+        $missingTags = array();
+        foreach($tagsFromAPI as $tagInArray) {
+            $tagFoundInDatabase = false;
+            foreach($tagsFromDatabase as $tagInDatabase) {
+                if ($tagInArray->id == $tagInDatabase["id"]) {
+                    $tagFoundInDatabase = true;
+                }
+            }
+            if (!$tagFoundInDatabase) {
+                $missingTags[] = $tagInArray;
+            }
+        }
+        //Returns an array of Objects, as that is what the tagsFromAPI is
+        return $missingTags;
+    }
+
+
+    private function insertNewTags($newTagArray, $conn) {
+        $insertTagQuery = $this->convertTagArrayToSQL($newTagArray);
         $this->insertTags($conn, $insertTagQuery);
     }
 

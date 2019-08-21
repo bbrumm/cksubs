@@ -24,8 +24,17 @@ $dotenv->load();
 <br/>
 <span>Tag Download Progress:</span>
 <span id="outputTags"></span>
+<br/><br/>
+<h2>Tags</h2>
 
+<form method="POST" id="tagUpdateForm" action="">
+<button type="submit" class="btn btn-primary" id="btnUpdateTags">Update Tags</button>
+</form>
 <?php
+$apiController = new APIController();
+
+echo $apiController->getTagsForDisplay();
+
 require_once('layout/footer.php');
 ?>
 <script>
@@ -94,5 +103,9 @@ require_once('layout/footer.php');
             });
         }
         return false; //prevent the form for submitting or redirecting
+    });
+
+    $('#btnUpdateTags').click(function() {
+       alert("TODO add Ajax call here to update data");
     });
 </script>
