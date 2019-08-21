@@ -7,49 +7,90 @@ $dotenv->load();
 
 ?>
 <form method="POST" id="mainForm" action="">
-    <p><button name="submitAction" type="submit" id="btnSubmit">Download Subscribers</button></p>
+    <p>
+        <button type="submit" class="btn btn-primary" id="btnDownloadSubs" name="download" value="subs">Download Subscribers</button>
+        <button type="submit" class="btn btn-primary" id="btnDownloadTags" name="download" value="tags">Download Tags</button>
+    </p>
 </form>
-
-<form method="POST" id="testForm">
-    <input type="submit" name="submitAction" value="Download Subscribers Submit" />
+<!--
+<form method="POST" id="testForm" action="loadAPI.php?type=tags">
+    <p>
+        <button type="submit" class="btn btn-primary">Download Tags Submit</button>
+    </p>
 </form>
-<span id="output"></span>
+-->
+<span>Subscriber Download Progress:</span>
+<span id="outputSubs"></span>
+<br/>
+<span>Tag Download Progress:</span>
+<span id="outputTags"></span>
 
 <?php
-if(isset($_POST['submitAction'])) {
-    if ($_POST['submitAction'] == 'Download Subscribers Submit') {
-        $apiController = new APIController();
-        //echo "Subscriber get";
-        $apiController->getAllSubscribers();
-    }
-}
 require_once('layout/footer.php');
 ?>
 <script>
-    $('#mainForm').on('submit',function(){
+    //$('#mainForm').on('submit',function(){
+
+    $('#btnDownloadSubs').click(function() {
         window.pollingPeriod = 500;
         window.progressInterval;
         console.log("line 1");
-        $.getJSON('loadAPI.php', function(data){
+        $.getJSON('loadAPI.php?type=' + $(this).val(), function(data){
             console.log("line 2");
             clearInterval(window.progressInterval);
-            $('#output').html('Woohoo, all done! Message from server: ' + data.message);
+            $('#outputSubs').html('Completed');
         }).fail(function(data){
             console.log("line 3 error: ");
             console.log(data);
+            console.log(data.responseText);
             clearInterval(window.progressInterval);
-            $('#output').html('Uh oh, something went wrong 1 ');
+            $('#outputSubs').html('Uh oh, something went wrong 1 ');
         });
-        window.progressInterval = setInterval(updateProgress, window.pollingPeriod);
-        function updateProgress(){
+        window.progressInterval = setInterval(updateSubProgress, window.pollingPeriod);
+        function updateSubProgress(){
             $.getJSON('progress.json',function(data){
                 console.log("line 4");
-                $('#output').html(data.percentComplete*100 + ' complete');
+                console.log(data);
+                $('#outputSubs').html(data.percentSubsComplete * 100 + '% complete');
             }).fail(function(data){
                 console.log("line 5 error: ");
                 console.log(data);
+                console.log(data.responseText);
                 clearInterval(window.progressInterval);
-                $('#output').html('Uh oh, something went wrong 2 ');
+                $('#outputSubs').html('Uh oh, something went wrong 2 ');
+            });
+        }
+        return false; //prevent the form for submitting or redirecting
+    });
+
+
+    $('#btnDownloadTags').click(function() {
+        window.pollingPeriod = 500;
+        window.progressInterval;
+        console.log("T line 1");
+        $.getJSON('loadAPITags.php', function(data){
+            console.log("T line 2");
+            clearInterval(window.progressInterval);
+            $('#outputTags').html('Completed');
+        }).fail(function(data){
+            console.log("T line 3 error: ");
+            console.log(data);
+            console.log(data.responseText);
+            clearInterval(window.progressInterval);
+            $('#outputTags').html('Uh oh, something went wrong 1');
+        });
+        window.progressInterval = setInterval(updateTagProgress, window.pollingPeriod);
+        function updateTagProgress(){
+            $.getJSON('progress.json',function(data){
+                console.log("T line 4");
+                //console.log(data);
+                $('#outputTags').html(data.percentTagsComplete * 100 + '% complete');
+            }).fail(function(data){
+                console.log("T line 5 error: ");
+                console.log(data);
+                console.log(data.responseText);
+                clearInterval(window.progressInterval);
+                $('#outputTags').html('Uh oh, something went wrong 2');
             });
         }
         return false; //prevent the form for submitting or redirecting

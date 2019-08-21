@@ -15,7 +15,6 @@ class DBConnection {
         return (getenv("ENVIRONMENT") == "dev");
     }
 
-    //TODO: Change this to use an environment variable because it's different in local vs travis
     public function createConnection() {
         $dbServername = "localhost";
         $dbUsername = "root";
@@ -38,6 +37,7 @@ class DBConnection {
             return $conn;
         } catch(PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
+            throw $e;
         }
 
     }
@@ -45,6 +45,12 @@ class DBConnection {
     //TODO: Refactor these functions to make the runQuery less confusing.
     public function resetSubscriberTable($dbConnection) {
         $truncateTable = "TRUNCATE TABLE subscriber;";
+        $this->runQuery($dbConnection, $truncateTable);
+        $this->runQuery($dbConnection, "COMMIT;");
+    }
+
+    public function resetTagTable($dbConnection) {
+        $truncateTable = "TRUNCATE TABLE tag;";
         $this->runQuery($dbConnection, $truncateTable);
         $this->runQuery($dbConnection, "COMMIT;");
     }
