@@ -38,3 +38,7 @@ CREATE TABLE subscriber_bk (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (1, 'test tag', 1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (390939, 'Start Content 01', 1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (429090, 'Done Content 01', 1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (435103, 'DONESEQ Engagement DB Normalisation', 0);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (514580, 'Start Content 06', 1);
