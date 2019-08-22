@@ -26,47 +26,12 @@ class APIController {
     public function getAllTags() {
         $dotenv = Dotenv\Dotenv::create(__DIR__. '/../..');
         $dotenv->load();
-        //echo "getAllTags ";
         $apiTagResponse = new APITagResponse();
         $this->loadTags($apiTagResponse);
 
     }
 
-    public function getTagsForDisplay() {
-        $dbConnection = new DBConnection();
-        $conn = $dbConnection->createConnection();
 
-        $tagsInDatabase = $this->loadTagsFromDatabase($conn);
-        return $this->prepareTagsForDisplay($tagsInDatabase);
-    }
-
-    private function prepareTagsForDisplay($tagsInDatabase) {
-        $outputData = "<table class='table'>";
-        $outputData .= "<thead class='thead-dark'>";
-        $outputData .= "<tr>";
-        $outputData .= "<th scope='col'>Tag ID</th>";
-        $outputData .= "<th scope='col'>Tag Name</th>";
-        $outputData .= "<th scope='col'>Map</th>";
-        $outputData .= "</tr>";
-        $outputData .= "</thead>";
-        $outputData .= "<tbody>";
-        foreach ($tagsInDatabase as $tagInDatabase) {
-            $outputData .= "<tr>";
-            $outputData .= "<td>". $tagInDatabase['tag_id'] ."</td>";
-            $outputData .= "<td>". $tagInDatabase['tag_name'] ."</td>";
-            $checkedValue = "";
-            if ($tagInDatabase['tag_map_id'] == 1) {
-                $checkedValue = "checked";
-            }
-            $outputData .= "<td><div class='form-check'>".
-                "<input class='form-check-input' type='checkbox' value='' id='defaultCheck1' ". $checkedValue .">".
-                "</div></td>";
-            $outputData .= "</tr>";
-        }
-        $outputData .= "</tbody>";
-        $outputData .= "</table>";
-        return $outputData;
-    }
 
     public function loadSubscribers(ISubscriberResponse $subscriberResponse) {
         file_put_contents(

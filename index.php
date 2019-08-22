@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 require_once('layout/header.php');
-require_once('src/controller/APIController.php');
+require_once('src/controller/TagDisplayer.php');
 $dotenv = Dotenv\Dotenv::create(__DIR__);
 $dotenv->load();
 
@@ -31,9 +31,10 @@ $dotenv->load();
 <button type="submit" class="btn btn-primary" id="btnUpdateTags">Update Tags</button>
 </form>
 <?php
-$apiController = new APIController();
-
-echo $apiController->getTagsForDisplay();
+//$apiController = new APIController();
+//echo $apiController->getTagsForDisplay();
+$tagDisplayer = new TagDisplayer();
+echo $tagDisplayer->getTagsForDisplay();
 
 require_once('layout/footer.php');
 ?>
