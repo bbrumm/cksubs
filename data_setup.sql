@@ -36,3 +36,5 @@ CREATE TABLE subscriber_bk (
   subscriber_created_at date DEFAULT NULL,
   KEY idx_sub_id (subscriber_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (1, 'test tag', 1);
