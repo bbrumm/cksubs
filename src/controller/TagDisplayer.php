@@ -12,7 +12,14 @@ class TagDisplayer {
         $tagsInDatabase = $this->loadTagsFromDatabase($conn);
         return $this->prepareTagsForDisplay($tagsInDatabase);
     }
-    
+
+    private function loadTagsFromDatabase(PDO $conn) {
+        $queryString = "SELECT t.tag_id, t.tag_name, t.tag_map_id FROM tag t ORDER BY t.tag_map_id, t.tag_name;";
+        $queryResult = $conn->query($queryString);
+        $resultArray = $queryResult->fetchAll(PDO::FETCH_ASSOC);
+        return $resultArray;
+    }
+
     public function prepareTagsForDisplay($tagArray) {
         if(count($tagArray) > 0) {
             $outputData = $this->populateTagTableHeader();

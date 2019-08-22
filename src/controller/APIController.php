@@ -15,6 +15,8 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 class APIController {
 
+    const PROGRESS_JSON_FILENAME = "progress.json";
+
     public function getAllSubscribers() {
         $dotenv = Dotenv\Dotenv::create(__DIR__. '/../..');
         $dotenv->load();
@@ -34,19 +36,11 @@ class APIController {
 
 
     public function loadSubscribers(ISubscriberResponse $subscriberResponse) {
-        file_put_contents(
-            'progress.json',
-            json_encode(array('percentSubsComplete'=>0))
-        );
+        $this->updateJsonWithSubsProgress(0);
 
         $dbConnection = new DBConnection();
         $conn = $dbConnection->createConnection();
         $dbConnection->resetSubscriberTable($conn);
-
-        file_put_contents(
-            'progress.json',
-            json_encode(array('percentSubsComplete'=>0))
-        );
 
         $this->insertAllSubscribersFromAPI($subscriberResponse, $conn);
 
@@ -62,7 +56,6 @@ class APIController {
             $pageNumberCount = $this->updateTotalPageNumberFromAPIResponse($response);
             $pctComplete = round($pageNumOfThisAPICall/$pageNumberCount,2);
             $this->updateJsonWithSubsProgress($pctComplete);
-
         }
     }
 
@@ -90,17 +83,17 @@ class APIController {
 
     //Write out the progress to a JSON file, which is used to update the index page.
     private function updateJsonWithSubsProgress($pctComplete) {
-        file_put_contents(
-            'progress.json',
-            json_encode(array('percentSubsComplete'=>$pctComplete))
-        );
+        $this->updateJsonValue('percentSubsComplete', $pctComplete);
     }
 
     private function updateJsonWithTagsProgress($pctComplete) {
+        $this->updateJsonValue('percentTagsComplete', $pctComplete);
+    }
+
+    private function updateJsonValue($indexKey, $indexValue) {
         file_put_contents(
-            'progress.json',
-            //json_encode(array('percentComplete'=>$pageNumOfThisAPICall/$pageNumberCount))
-            json_encode(array('percentTagsComplete'=>$pctComplete))
+            self::PROGRESS_JSON_FILENAME,
+            json_encode(array($indexKey=>$indexValue))
         );
     }
 
@@ -116,8 +109,6 @@ class APIController {
 
     private function determineNewTags($response, $conn) {
         $tagsFromAPI = $response->tags;
-        //echo "API TAGS:";
-        //print_r($tagsFromAPI);
         $tagsFromDatabase = $this->loadExistingTagsFromDatabase($conn);
         return $this->findTagsFromAPINotInDatabase($tagsFromAPI, $tagsFromDatabase);
     }
@@ -127,22 +118,6 @@ class APIController {
         $queryResult = $conn->query($queryString);
         $resultArray = $queryResult->fetchAll(PDO::FETCH_ASSOC);
 
-        //echo "RESULT: ";
-        //print_r($resultArray);
-        return $resultArray;
-    }
-
-    private function loadTagsFromDatabase(PDO $conn) {
-        $queryString = "SELECT t.tag_id, t.tag_name, t.tag_map_id FROM tag t ORDER BY t.tag_map_id, t.tag_name;";
-        $queryResult = $conn->query($queryString);
-        $resultArray = $queryResult->fetchAll(PDO::FETCH_ASSOC);
-        return $resultArray;
-    }
-
-    private function loadPossibleMapValues(PDO $conn) {
-        $queryString = "SELECT tag_map_id, map_value FROM tag_map ORDER BY tag_map_id;";
-        $queryResult = $conn->query($queryString);
-        $resultArray = $queryResult->fetchAll(PDO::FETCH_ASSOC);
         return $resultArray;
     }
 
@@ -183,9 +158,7 @@ class APIController {
         foreach ($tagArray as $key => $value) {
             $queryString .= "(". $value->id .", '". $value->name ."') ";
             $currentTagNumber++;
-            if ($currentTagNumber < $tagCount) {
-                $queryString.= ",";
-            }
+            $queryString .= $this->appendCommaIfNotLastRecord($currentTagNumber, $tagCount);
         }
         return $queryString;
     }
@@ -210,11 +183,16 @@ class APIController {
                 $value->state ."', ".
                 "STR_TO_DATE(SUBSTR('" . $value->created_at ."', 1, 10), '%Y-%m-%d')) ";
             $currentTagNumber++;
-            if ($currentTagNumber < $tagCount) {
-                $queryString.= ",";
-            }
+            $queryString .= $this->appendCommaIfNotLastRecord($currentTagNumber, $tagCount);
         }
         return $queryString;
+    }
+
+    private function appendCommaIfNotLastRecord($currentTagNumber, $tagCount) {
+        if ($currentTagNumber < $tagCount) {
+            return ",";
+        }
+        return "";
     }
 
     private function insertSubscribers($conn, $insertQuery) {
