@@ -1,23 +1,19 @@
 <?php
 require_once("src/model/DBConnection.php");
+require_once("src/model/DBTagDatabase.php");
+require_once("src/model/TagRecord.php");
 require __DIR__ . '/../../vendor/autoload.php';
 
 
 class TagDisplayer {
 
+    const MAP_ID_MATCHED = 1;
+    const MAP_ID_IGNORED = 2;
+
     public function getTagsForDisplay() {
-        $dbConnection = new DBConnection();
-        $conn = $dbConnection->createConnection();
-
-        $tagsInDatabase = $this->loadTagsFromDatabase($conn);
+        $dbTagDatabase = new DBTagDatabase();
+        $tagsInDatabase = $dbTagDatabase->loadTagsFromDatabase();
         return $this->prepareTagsForDisplay($tagsInDatabase);
-    }
-
-    private function loadTagsFromDatabase(PDO $conn) {
-        $queryString = "SELECT t.tag_id, t.tag_name, t.tag_map_id FROM tag t ORDER BY t.tag_map_id, t.tag_name;";
-        $queryResult = $conn->query($queryString);
-        $resultArray = $queryResult->fetchAll(PDO::FETCH_ASSOC);
-        return $resultArray;
     }
 
     public function prepareTagsForDisplay($tagArray) {
@@ -46,8 +42,8 @@ class TagDisplayer {
         $outputData = "<tbody>";
         foreach ($tagArray as $tagInDatabase) {
             $outputData .= "<tr>";
-            $outputData .= "<td>" . $tagInDatabase['tag_id'] . "</td>";
-            $outputData .= "<td>" . $tagInDatabase['tag_name'] . "</td>";
+            $outputData .= "<td>" . $tagInDatabase->getTagID() . "</td>";
+            $outputData .= "<td>" . $tagInDatabase->getTagName() . "</td>";
             $outputData .= $this->appendCheckboxHTMLCell($tagInDatabase);
             $outputData .= "</tr>";
         }
@@ -59,7 +55,8 @@ class TagDisplayer {
     private function appendCheckboxHTMLCell($tagInDatabase) {
         $checkedValue = $this->determineCheckboxCheckedValue($tagInDatabase);
         return "<td><div class='form-check'>" .
-            "<input class='form-check-input' type='checkbox' value='' id='defaultCheck1' " . $checkedValue . ">" .
+            "<input id='". $tagInDatabase->getTagID() ."_hidden' type='hidden' value='". self::MAP_ID_IGNORED ."' name='". $tagInDatabase->getTagID() ."'>" .
+            "<input class='form-check-input' type='checkbox' value='". self::MAP_ID_MATCHED ."' name='". $tagInDatabase->getTagID() ."' id='". $tagInDatabase->getTagID() ."' " . $checkedValue . ">" .
             "</div></td>";
     }
 
@@ -74,7 +71,7 @@ class TagDisplayer {
 
 
     private function isTagMappedForLookup($tagArrayRow) {
-        return ($tagArrayRow['tag_map_id'] == 1);
+        return ($tagArrayRow->getTagMapID() == self::MAP_ID_MATCHED);
     }
 
 

@@ -2,13 +2,13 @@
 require_once('src/controller/TagDisplayer.php');
 
 class TagDisplayerTest extends \PHPUnit\Framework\TestCase {
+
+    const MAP_ID_MATCHED = 1;
+    const MAP_ID_IGNORED = 2;
+
     public function test_OneTagDisplayed() {
         $tagArray = array(
-            array(
-                'tag_id'=>1,
-                'tag_name'=>'single tag',
-                'tag_map_id'=>'1'
-            )
+            TagRecord::createTagRecord(1, 'single tag', self::MAP_ID_MATCHED)
         );
         $tagDisplayer = new TagDisplayer();
 
@@ -31,31 +31,14 @@ class TagDisplayerTest extends \PHPUnit\Framework\TestCase {
         $actualResult = $tagDisplayer->prepareTagsForDisplay($tagArray);
         $this->assertEquals($expectedMessage, $actualResult);
 
-
     }
 
     public function test_MultipleTagsDisplayed() {
         $tagArray = array(
-            array(
-                'tag_id'=>1,
-                'tag_name'=>'single tag',
-                'tag_map_id'=>'1'
-            ),
-            array(
-                'tag_id'=>12324536,
-                'tag_name'=>'again',
-                'tag_map_id'=>'0'
-            ),
-            array(
-                'tag_id'=>634,
-                'tag_name'=>'boomerang',
-                'tag_map_id'=>'1'
-            ),
-            array(
-                'tag_id'=>1,
-                'tag_name'=>'sdfagi348bfkhb',
-                'tag_map_id'=>'0'
-            )
+            TagRecord::createTagRecord(1, 'single tag', self::MAP_ID_MATCHED),
+            TagRecord::createTagRecord(12324536, 'again', self::MAP_ID_IGNORED),
+            TagRecord::createTagRecord(634, 'boomerang', self::MAP_ID_MATCHED),
+            TagRecord::createTagRecord(1, 'sdfagi348bfkhb', self::MAP_ID_IGNORED)
         );
         $tagDisplayer = new TagDisplayer();
 
@@ -79,16 +62,8 @@ class TagDisplayerTest extends \PHPUnit\Framework\TestCase {
 
     public function test_CorrectColumnsAreShown() {
         $tagArray = array(
-            array(
-                'tag_id'=>1,
-                'tag_name'=>'single tag',
-                'tag_map_id'=>'1'
-            ),
-            array(
-                'tag_id'=>12324536,
-                'tag_name'=>'again',
-                'tag_map_id'=>'0'
-            )
+            TagRecord::createTagRecord(1, 'single tag', self::MAP_ID_MATCHED),
+            TagRecord::createTagRecord(12324536, 'again', self::MAP_ID_IGNORED),
         );
 
         $tagDisplayer = new TagDisplayer();
@@ -101,23 +76,16 @@ class TagDisplayerTest extends \PHPUnit\Framework\TestCase {
 
     public function test_TagWithMatchIsChecked() {
         $tagArray = array(
-            array(
-                'tag_id'=>1,
-                'tag_name'=>'single tag',
-                'tag_map_id'=>'1'
-            ),
-            array(
-                'tag_id'=>12324536,
-                'tag_name'=>'again',
-                'tag_map_id'=>'0'
-            )
+            TagRecord::createTagRecord(1, 'single tag', self::MAP_ID_MATCHED),
+            TagRecord::createTagRecord(12324536, 'again', self::MAP_ID_IGNORED),
         );
 
         $tagDisplayer = new TagDisplayer();
 
         $expectedTableRow = "<tr><td>1</td><td>single tag</td>".
             "<td><div class='form-check'>" .
-            "<input class='form-check-input' type='checkbox' value='' id='defaultCheck1' checked>" .
+            "<input id='1_hidden' type='hidden' value='2' name='1'>" .
+            "<input class='form-check-input' type='checkbox' value='1' name='1' id='1' checked>" .
             "</div></td></tr>";
         $actualResult = $tagDisplayer->prepareTagsForDisplay($tagArray);
         $this->assertContains($expectedTableRow, $actualResult);
@@ -125,26 +93,32 @@ class TagDisplayerTest extends \PHPUnit\Framework\TestCase {
 
     public function test_TagWithIgnoreIsUnChecked() {
         $tagArray = array(
-            array(
-                'tag_id'=>1,
-                'tag_name'=>'single tag',
-                'tag_map_id'=>'1'
-            ),
-            array(
-                'tag_id'=>12324536,
-                'tag_name'=>'again',
-                'tag_map_id'=>'0'
-            )
+            TagRecord::createTagRecord(1, 'single tag', self::MAP_ID_MATCHED),
+            TagRecord::createTagRecord(12324536, 'again', self::MAP_ID_IGNORED),
         );
 
         $tagDisplayer = new TagDisplayer();
 
         $expectedTableRow = "<tr><td>12324536</td><td>again</td>".
             "<td><div class='form-check'>" .
-            "<input class='form-check-input' type='checkbox' value='' id='defaultCheck1' >" .
+            "<input id='12324536_hidden' type='hidden' value='2' name='12324536'>" .
+            "<input class='form-check-input' type='checkbox' value='1' name='12324536' id='12324536' >" .
             "</div></td></tr>";
         $actualResult = $tagDisplayer->prepareTagsForDisplay($tagArray);
         $this->assertContains($expectedTableRow, $actualResult);
+    }
+
+    public function test_DisplayTagsFromDB() {
+        $tagDisplayer = new TagDisplayer();
+
+        $expectedTableHeader = "<table class='table'>";
+        $actualResult = $tagDisplayer->getTagsForDisplay();
+        $this->assertContains($expectedTableHeader, $actualResult);
+
+        $expectedTableRow = "<tr><td>390939</td><td>Start Content 01</td>";
+        $actualResult = $tagDisplayer->getTagsForDisplay();
+        $this->assertContains($expectedTableRow, $actualResult);
+
     }
 
 }

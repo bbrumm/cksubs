@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07869da8-bd87-41d2-b9db-155e9dd1125e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/TagMatchUpdater.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/ArrayTagDatabase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/DBTagDatabase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/ITagDatabase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/TagRecord.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/TagMatchUpdater_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/APIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/APIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/TagDisplayer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TagDisplayer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/DBConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DBConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TagDisplayer_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TagDisplayer_test.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,13 +26,13 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cksubs$APIControllerTest_test_ArrayResponseIntoDatabase.xml" NAME="APIControllerTest.test_ArrayResponseIntoDatabase Coverage Results" MODIFIED="1566101008508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/cksubs$phpunit.xml" NAME="phpunit Coverage Results" MODIFIED="1566462653226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/cksubs$phpunit.xml" NAME="phpunit Coverage Results" MODIFIED="1566502392108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="0" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="454" />
+    <option name="myElementSize" value="558" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="396024863">
@@ -48,7 +57,7 @@
           <entry key="js" value="1" />
           <entry key="json" value="27" />
           <entry key="md" value="1" />
-          <entry key="php" value="135" />
+          <entry key="php" value="159" />
           <entry key="sql" value="1" />
           <entry key="xml" value="5" />
           <entry key="yaml" value="1" />
@@ -62,7 +71,7 @@
           <entry key="JSON" value="27" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="135" />
+          <entry key="PHP" value="159" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="5" />
@@ -77,7 +86,7 @@
           <entry key="js" value="30" />
           <entry key="json" value="113" />
           <entry key="md" value="37" />
-          <entry key="php" value="12882" />
+          <entry key="php" value="19011" />
           <entry key="xml" value="36" />
           <entry key="yaml" value="5" />
           <entry key="yml" value="19" />
@@ -89,7 +98,7 @@
           <entry key="JSON" value="113" />
           <entry key="JavaScript" value="30" />
           <entry key="Markdown" value="37" />
-          <entry key="PHP" value="12882" />
+          <entry key="PHP" value="19011" />
           <entry key="PLAIN_TEXT" value="80" />
           <entry key="XML" value="36" />
           <entry key="YAML" value="24" />
@@ -102,26 +111,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="48" />
+            <state relative-caret-position="455">
+              <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/api_controller_test.php">
+        <entry file="file://$PROJECT_DIR$/post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="59" lean-forward="true" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+            <state relative-caret-position="60">
+              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/APIController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/TagMatchUpdater.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="57" column="60" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+            <state relative-caret-position="360">
+              <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/ArrayTagDatabase.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/DBTagDatabase.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="83" lean-forward="true" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -129,33 +156,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/TagDisplayer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+            <state relative-caret-position="180">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/TagRecord.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/TagMatchUpdater_test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="9" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/TagDisplayer_test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+            <state relative-caret-position="778">
+              <caret line="117" column="74" selection-start-line="117" selection-start-column="74" selection-end-line="117" selection-end-column="74" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/DBConnection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/progress.json">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -179,6 +210,9 @@
       <find>echo</find>
       <find>createConnection</find>
       <find>fetch</find>
+      <find>prepare</find>
+      <find>updateTagMapIDs</find>
+      <find>TODO</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,10 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/update_tags.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/.travis.yaml" />
         <option value="$PROJECT_DIR$/.coveralls.yml" />
         <option value="$PROJECT_DIR$/src/SubscriberCollection.php" />
         <option value="$PROJECT_DIR$/phpunitstorm.xml" />
@@ -226,14 +256,22 @@
         <option value="$PROJECT_DIR$/src/model/ITagResponse.php" />
         <option value="$PROJECT_DIR$/tests/APITagResponse_test.php" />
         <option value="$PROJECT_DIR$/src/model/ArrayTagResponse.php" />
-        <option value="$PROJECT_DIR$/src/model/DBConnection.php" />
         <option value="$PROJECT_DIR$/tests/DBConnection_test.php" />
         <option value="$PROJECT_DIR$/loadAPI.php" />
         <option value="$PROJECT_DIR$/tests/api_controller_test.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/tests/TagDisplayer_test.php" />
-        <option value="$PROJECT_DIR$/src/controller/TagDisplayer.php" />
         <option value="$PROJECT_DIR$/src/controller/APIController.php" />
+        <option value="$PROJECT_DIR$/src/model/ITagDatabase.php" />
+        <option value="$PROJECT_DIR$/display.php" />
+        <option value="$PROJECT_DIR$/post.php" />
+        <option value="$PROJECT_DIR$/src/model/TagRecord.php" />
+        <option value="$PROJECT_DIR$/src/model/ArrayTagDatabase.php" />
+        <option value="$PROJECT_DIR$/tests/TagMatchUpdater_test.php" />
+        <option value="$PROJECT_DIR$/src/controller/TagMatchUpdater.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/src/model/DBConnection.php" />
+        <option value="$PROJECT_DIR$/src/model/DBTagDatabase.php" />
+        <option value="$PROJECT_DIR$/src/controller/TagDisplayer.php" />
+        <option value="$PROJECT_DIR$/tests/TagDisplayer_test.php" />
       </list>
     </option>
   </component>
@@ -309,8 +347,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="width" value="2560" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -389,25 +427,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.phpunit">
-    <configuration name="TagDisplayerTest.test_CorrectColumnsAreShown" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagDisplayerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagDisplayer_test.php" method="test_CorrectColumnsAreShown" scope="Method" use_alternative_configuration_file="true" />
+  <component name="RunManager" selected="PHPUnit.TagDisplayerTest.test_DisplayTagsFromDB">
+    <configuration name="TagDisplayerTest.test_DisplayTagsFromDB" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagDisplayerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagDisplayer_test.php" method="test_DisplayTagsFromDB" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagDisplayerTest.test_MultipleTagsDisplayed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagDisplayerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagDisplayer_test.php" method="test_MultipleTagsDisplayed" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagMatchUpdaterTest.test_UpdateManyTags" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagMatchUpdaterTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagMatchUpdater_test.php" method="test_UpdateManyTags" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagDisplayerTest.test_OneTagDisplayed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagDisplayerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagDisplayer_test.php" method="test_OneTagDisplayed" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagMatchUpdaterTest.test_UpdateMultipleTagsAlreadyIgnored" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagMatchUpdaterTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagMatchUpdater_test.php" method="test_UpdateMultipleTagsAlreadyIgnored" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagDisplayerTest.test_TagWithIgnoreIsUnChecked" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagDisplayerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagDisplayer_test.php" method="test_TagWithIgnoreIsUnChecked" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagMatchUpdaterTest.test_UpdateMultipleTagsOneDifferenceMatched" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagMatchUpdaterTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagMatchUpdater_test.php" method="test_UpdateMultipleTagsOneDifferenceMatched" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagDisplayerTest.test_TagWithMatchIsChecked" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagDisplayerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagDisplayer_test.php" method="test_TagWithMatchIsChecked" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagMatchUpdaterTest.test_UpdateTagsToDatabase_Ignored" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagMatchUpdaterTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagMatchUpdater_test.php" method="test_UpdateTagsToDatabase_Ignored" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -424,19 +462,19 @@
     <list>
       <item itemvalue="PHP Web Page.PHP Webpage" />
       <item itemvalue="PHPUnit.phpunit" />
-      <item itemvalue="PHPUnit.TagDisplayerTest.test_OneTagDisplayed" />
-      <item itemvalue="PHPUnit.TagDisplayerTest.test_MultipleTagsDisplayed" />
-      <item itemvalue="PHPUnit.TagDisplayerTest.test_CorrectColumnsAreShown" />
-      <item itemvalue="PHPUnit.TagDisplayerTest.test_TagWithMatchIsChecked" />
-      <item itemvalue="PHPUnit.TagDisplayerTest.test_TagWithIgnoreIsUnChecked" />
+      <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateMultipleTagsOneDifferenceMatched" />
+      <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateMultipleTagsAlreadyIgnored" />
+      <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateManyTags" />
+      <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateTagsToDatabase_Ignored" />
+      <item itemvalue="PHPUnit.TagDisplayerTest.test_DisplayTagsFromDB" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.TagDisplayerTest.test_TagWithIgnoreIsUnChecked" />
-        <item itemvalue="PHPUnit.TagDisplayerTest.test_TagWithMatchIsChecked" />
-        <item itemvalue="PHPUnit.TagDisplayerTest.test_CorrectColumnsAreShown" />
-        <item itemvalue="PHPUnit.TagDisplayerTest.test_MultipleTagsDisplayed" />
-        <item itemvalue="PHPUnit.TagDisplayerTest.test_OneTagDisplayed" />
+        <item itemvalue="PHPUnit.TagDisplayerTest.test_DisplayTagsFromDB" />
+        <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateTagsToDatabase_Ignored" />
+        <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateManyTags" />
+        <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateMultipleTagsAlreadyIgnored" />
+        <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateMultipleTagsOneDifferenceMatched" />
       </list>
     </recent_temporary>
   </component>
@@ -457,44 +495,44 @@
       <workItem from="1566097724195" duration="20358000" />
       <workItem from="1566213123896" duration="10124000" />
       <workItem from="1566373419069" duration="11328000" />
-      <workItem from="1566460343948" duration="2881000" />
+      <workItem from="1566460343948" duration="14814000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TagDisplayerTest_test_TagWithIgnoreIsUnChecked - 2019.08.22 at 18h 19m 33s.xml">
-      <configuration name="TagDisplayerTest.test_TagWithIgnoreIsUnChecked" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 19m 48s.xml">
+    <history-entry file="phpunit - 2019.08.23 at 05h 21m 35s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 23m 24s.xml">
+    <history-entry file="phpunit - 2019.08.23 at 05h 22m 47s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 25m 20s.xml">
+    <history-entry file="phpunit - 2019.08.23 at 05h 24m 25s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 25m 30s.xml">
+    <history-entry file="phpunit - 2019.08.23 at 05h 25m 26s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 25m 46s.xml">
+    <history-entry file="phpunit - 2019.08.23 at 05h 27m 36s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 30m 57s.xml">
+    <history-entry file="phpunit - 2019.08.23 at 05h 30m 28s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 35m 10s.xml">
+    <history-entry file="phpunit - 2019.08.23 at 05h 32m 53s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 35m 29s.xml">
+    <history-entry file="phpunit - 2019.08.23 at 05h 33m 15s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="phpunit - 2019.08.22 at 18h 39m 26s.xml">
-      <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="TagDisplayerTest_test_DisplayTagsFromDB - 2019.08.23 at 05h 36m 09s.xml">
+      <configuration name="TagDisplayerTest.test_DisplayTagsFromDB" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TagDisplayerTest_test_DisplayTagsFromDB - 2019.08.23 at 05h 36m 15s.xml">
+      <configuration name="TagDisplayerTest.test_DisplayTagsFromDB" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60808000" />
+    <option name="totallyTimeSpent" value="72741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1417" extended-state="6" />
@@ -505,8 +543,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981133" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25962263" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.45056602" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24150944" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3154717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -520,7 +558,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.30543634" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.30540112" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,45 +585,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/exceptions/RequestException.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="776" column="54" lean-forward="true" selection-start-line="776" selection-start-column="9" selection-end-line="776" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../bin/php/php7.2.8/conf/php.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="613" column="25" lean-forward="true" selection-start-line="613" selection-start-column="25" selection-end-line="613" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view_subs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/SubscriberPerson.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.php" />
-    <entry file="file://$PROJECT_DIR$/src/Connector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1373">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CustomField.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -750,13 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ITagResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ArraySubscriberResponse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -785,17 +777,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loadAPI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/progress.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="964" column="20" selection-start-line="964" selection-start-column="20" selection-end-line="964" selection-end-column="20" />
+        <state relative-caret-position="318">
+          <caret line="173" column="67" lean-forward="true" selection-start-line="173" selection-start-column="67" selection-end-line="173" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -806,41 +794,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/DBConnection.php">
+    <entry file="file://$PROJECT_DIR$/src/model/ITagResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        <state>
+          <caret selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/progress.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ArrayTagResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/src/model/ITagDatabase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="48" />
+        <state relative-caret-position="60">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="173" column="67" lean-forward="true" selection-start-line="173" selection-start-column="67" selection-end-line="173" selection-end-column="67" />
+        <state relative-caret-position="293">
+          <caret line="823" column="14" selection-start-line="823" selection-start-column="7" selection-end-line="823" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TagDisplayer_test.php">
+    <entry file="file://$PROJECT_DIR$/loadAPI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/api_controller_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="23" column="41" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="23" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -851,24 +843,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/api_controller_test.php">
+    <entry file="file://$PROJECT_DIR$/src/controller/APIController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="59" lean-forward="true" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ArrayTagDatabase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/DBConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="48" column="54" lean-forward="true" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TagMatchUpdater.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/DBTagDatabase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="83" lean-forward="true" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/TagRecord.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TagMatchUpdater_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="9" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/TagDisplayer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        <state relative-caret-position="180">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/APIController.php">
+    <entry file="file://$PROJECT_DIR$/tests/TagDisplayer_test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="57" column="60" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+        <state relative-caret-position="778">
+          <caret line="117" column="74" selection-start-line="117" selection-start-column="74" selection-end-line="117" selection-end-column="74" />
         </state>
       </provider>
     </entry>

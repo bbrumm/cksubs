@@ -11,24 +11,17 @@ class DBConnection {
     }
 
     private function isCurrentEnvironmentDev() {
-        //return ($_SERVER["HTTP_HOST"] == "localhost:8888");
         return (getenv("ENVIRONMENT") == "dev");
+    }
+
+    private function isCurrentEnvironmentTravis() {
+        return (getenv("ENVIRONMENT") == "travistest");
     }
 
     public function createConnection() {
         $dbServername = "localhost";
         $dbUsername = "root";
-        $dbPassword = "root";
-        //TODO refactor this into a public method
-        //if(!isset($_ENV["ENVIRONMENT"])) {
-        //    $dbPassword = "root";
-        //} elseif ($_ENV["ENVIRONMENT"] == "dev") {
-        //echo "ENV: " . getenv("ENVIRONMENT");
-        if (getenv("ENVIRONMENT") == "dev") {
-            $dbPassword = "root";
-        } elseif (getenv("ENVIRONMENT") == "travistest") {
-            $dbPassword = "";
-        }
+        $dbPassword = $this->getDBPasswordForEnvironment();
 
         try {
             $conn = new PDO("mysql:host=$dbServername;dbname=ck_subscribers", $dbUsername, $dbPassword);
@@ -39,7 +32,16 @@ class DBConnection {
             echo "Connection failed: " . $e->getMessage();
             throw $e;
         }
+    }
 
+    private function getDBPasswordForEnvironment() {
+        $dbPassword = "root";
+        if ($this->isCurrentEnvironmentDev()) {
+            $dbPassword = "root";
+        } elseif ($this->isCurrentEnvironmentTravis()) {
+            $dbPassword = "";
+        }
+        return $dbPassword;
     }
 
     //TODO: Refactor these functions to make the runQuery less confusing.

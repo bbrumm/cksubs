@@ -29,7 +29,8 @@ $dotenv->load();
 
 <form method="POST" id="tagUpdateForm" action="">
 <button type="submit" class="btn btn-primary" id="btnUpdateTags">Update Tags</button>
-</form>
+<span id="updateTagResult"></span>
+
 <?php
 //$apiController = new APIController();
 //echo $apiController->getTagsForDisplay();
@@ -38,6 +39,8 @@ echo $tagDisplayer->getTagsForDisplay();
 
 require_once('layout/footer.php');
 ?>
+</form>
+
 <script>
     //$('#mainForm').on('submit',function(){
 
@@ -107,6 +110,23 @@ require_once('layout/footer.php');
     });
 
     $('#btnUpdateTags').click(function() {
-       alert("TODO add Ajax call here to update data");
+        $.ajax({
+            type: 'post',
+            url: 'post.php',
+            data: $('#tagUpdateForm').serialize(),
+            success: function (data) {
+                //alert('form was submitted');
+                console.log('form was submitted');
+                console.log(data);
+                $("#updateTagResult").html(data);
+            }
+        });
+
+        return false; //prevent the form for submitting or redirecting
+
     });
+
+
+
+
 </script>
