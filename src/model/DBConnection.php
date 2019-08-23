@@ -53,7 +53,7 @@ class DBConnection {
     }
 
     public function resetSubscriberTable($dbConnection) {
-        $this->truncateTable($dbConnection, "tag");
+        $this->truncateTable($dbConnection, "subscriber");
     }
 
     public function truncateTable($dbConnection, $tableName) {
