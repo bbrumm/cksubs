@@ -20,7 +20,8 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
 
         $dbConnection = new DBConnection();
         $conn = $dbConnection->createConnection();
-        $dbConnection->runQuery($conn, $queryString);
+        $conn->query($queryString);
+        //$dbConnection->runQuery($conn, $queryString);
         $this->assertEquals(1, 1);
 
     }
@@ -31,7 +32,8 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
 
         $dbConnection = new DBConnection();
         $conn = $dbConnection->createConnection();
-        $dbConnection->runQuery($conn, $queryString);
+        $conn->query($queryString);
+        //$dbConnection->runQuery($conn, $queryString);
     }
 
     //TODO refactor this into a public method as it is duplicated

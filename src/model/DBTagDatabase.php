@@ -51,18 +51,18 @@ class DBTagDatabase implements ITagDatabase {
         $idList = $this->getIDsToSetAMapID($tagDifferences, self::MAP_ID_MATCHED);
         $queryString = "UPDATE tag SET tag_map_id = ". self::MAP_ID_MATCHED .
             " WHERE tag_id IN (". $idList .");";
-        $this->conn->query($queryString);
+        $this->runQuery($queryString);
     }
 
     private function updateMapIDsToIgnored($tagDifferences) {
         $idList = $this->getIDsToSetAMapID($tagDifferences, self::MAP_ID_IGNORED);
         $queryString = "UPDATE tag SET tag_map_id = ". self::MAP_ID_IGNORED .
             " WHERE tag_id IN (". $idList .");";
-        $this->conn->query($queryString);
+        $this->runQuery($queryString);
     }
 
     private function commitChanges() {
-        $this->conn->query("COMMIT;");
+        $this->runQuery("COMMIT;");
     }
 
     private function getIDsToSetAMapID($tagDifferences, $tagMapID) {
@@ -73,6 +73,10 @@ class DBTagDatabase implements ITagDatabase {
             }
         }
         return $idList;
+    }
+
+    private function runQuery($queryString) {
+        $this->conn->query($queryString);
     }
 
 

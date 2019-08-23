@@ -2,6 +2,10 @@
 
 class DBConnection {
 
+    const DB_USERNAME = "root";
+    const DB_HOSTNAME = "localhost";
+    const DB_NAME = "ck_subscribers";
+
     public function __construct() {
         if($this->isCurrentEnvironmentDev()) {
             $rootFolder = __DIR__ . "/../../";
@@ -19,12 +23,8 @@ class DBConnection {
     }
 
     public function createConnection() {
-        $dbServername = "localhost";
-        $dbUsername = "root";
-        $dbPassword = $this->getDBPasswordForEnvironment();
-
         try {
-            $conn = new PDO("mysql:host=$dbServername;dbname=ck_subscribers", $dbUsername, $dbPassword);
+            $conn = new PDO($this->buildConnectionString(), $this->getDBUsername(), $this->getDBPasswordForEnvironment());
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
@@ -32,6 +32,14 @@ class DBConnection {
             echo "Connection failed: " . $e->getMessage();
             throw $e;
         }
+    }
+
+    private function buildConnectionString() {
+        return "mysql:host=". self::DB_HOSTNAME .";dbname=". self::DB_NAME;
+    }
+
+    private function getDBUsername() {
+        return self::DB_USERNAME;
     }
 
     private function getDBPasswordForEnvironment() {
@@ -44,35 +52,26 @@ class DBConnection {
         return $dbPassword;
     }
 
-    //TODO: Refactor these functions to make the runQuery less confusing.
     public function resetSubscriberTable($dbConnection) {
-        $truncateTable = "TRUNCATE TABLE subscriber;";
-        $this->runQuery($dbConnection, $truncateTable);
-        $this->runQuery($dbConnection, "COMMIT;");
+        $this->truncateTable($dbConnection, "tag");
     }
 
-    public function resetTagTable($dbConnection) {
-        $truncateTable = "TRUNCATE TABLE tag;";
-        $this->runQuery($dbConnection, $truncateTable);
-        $this->runQuery($dbConnection, "COMMIT;");
+    public function truncateTable($dbConnection, $tableName) {
+        $truncateTableQuery = "TRUNCATE TABLE ". $tableName .";";
+        $dbConnection->query($truncateTableQuery);
+        $dbConnection->query("COMMIT;");
     }
 
     public function resetTagTableForSpecificTagID($dbConnection, $tagID) {
-        $query = "DELETE FROM subscriber_tag WHERE tag_id = ". $tagID .";";
-        $this->runQuery($dbConnection, $query);
+        $queryString = "DELETE FROM subscriber_tag WHERE tag_id = ". $tagID .";";
+        $dbConnection->query($queryString);
     }
 
+    /*
     public function runQuery($dbConnection, $queryString) {
-        try {
-            $dbConnection->query($queryString);
-            //echo "Query run: <br />" . $queryString . "<br />";
-        } catch (Exception $e) {
-            //echo "Query failed: " . $e->getMessage();
-            //echo "Query: <br />" . $queryString . "<br />";
-            throw $e;
-        }
+        $dbConnection->query($queryString);
     }
-
+    */
 
 
 }
