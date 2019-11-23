@@ -33,6 +33,8 @@ class TagDisplayer {
         $outputData .= "<th scope='col'>Tag ID</th>";
         $outputData .= "<th scope='col'>Tag Name</th>";
         $outputData .= "<th scope='col'>Map</th>";
+        $outputData .= "<th scope='col'>Update</th>";
+        $outputData .= "<th scope='col'>Last Updated</th>";
         $outputData .= "</tr>";
         $outputData .= "</thead>";
         return $outputData;
@@ -45,6 +47,8 @@ class TagDisplayer {
             $outputData .= "<td>" . $tagInDatabase->getTagID() . "</td>";
             $outputData .= "<td>" . $tagInDatabase->getTagName() . "</td>";
             $outputData .= $this->appendCheckboxHTMLCell($tagInDatabase);
+            $outputData .= $this->appendTagSubscriberDownloadButton($tagInDatabase);
+            $outputData .= "<td>" . $tagInDatabase->getTagLastUpdated() . "</td>";
             $outputData .= "</tr>";
         }
         $outputData .= "</tbody>";
@@ -66,6 +70,11 @@ class TagDisplayer {
             $checkedValue = "checked";
         }
         return $checkedValue;
+    }
+
+    private function appendTagSubscriberDownloadButton($tagInDatabase) {
+        return "<td><button type='button' class='btn btn-primary' onClick='btnUpdateTagSubscribersClick(". $tagInDatabase->getTagID() .")' id='btnUpdateTagSubscribers'>Update Subscribers ". $tagInDatabase->getTagID() ." </button></td>";
+
     }
 
 

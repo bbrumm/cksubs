@@ -39,7 +39,7 @@ echo $tagDisplayer->getTagsForDisplay();
 
 require_once('layout/footer.php');
 ?>
-</form>
+
 
 <script>
     //$('#mainForm').on('submit',function(){
@@ -126,7 +126,49 @@ require_once('layout/footer.php');
 
     });
 
+    function btnUpdateTagSubscribersClick(tagID) {
+        console.log('Subscriber Tag Download: ' + tagID);
+
+        window.pollingPeriod = 500;
+        window.progressInterval;
+        console.log("TS line 1");
+        $.getJSON('loadAPITagSubscribers.php?tagID='+tagID, function(data){
+            console.log("TS line 2");
+            clearInterval(window.progressInterval);
+            $('#outputTags').html('Completed');
+        }).fail(function(data){
+            console.log("TS line 3 error: ");
+            console.log(data);
+            console.log('Response Text: ' + data.responseText);
+            clearInterval(window.progressInterval);
+            $('#outputTags').html('Uh oh, something went wrong 1');
+        });
+        window.progressInterval = setInterval(updateTagProgress, window.pollingPeriod);
+        function updateTagProgress(){
+            $.getJSON('progress.json',function(data){
+                console.log("TS line 4");
+                console.log(data);
+                $('#outputTags').html(data.percentTagSubscribersComplete * 100 + '% complete');
+            }).fail(function(data){
+                console.log("TS line 5 error: ");
+                console.log(data);
+                console.log(data.responseText);
+                clearInterval(window.progressInterval);
+                $('#outputTags').html('Uh oh, something went wrong 2');
+            });
+        }
+        return false; //prevent the form for submitting or redirecting
+    }
+
+    /*
+    $('#btnUpdateTagSubscribers').click(function() {
+
+    })
+    */
+
 
 
 
 </script>
+
+</form>

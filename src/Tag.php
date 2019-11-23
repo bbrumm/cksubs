@@ -47,9 +47,12 @@ class Tag extends ConvertKit {
         return $subscriber;
     }
 
-    public function listSubscriptions($id = null) {
+    public function getPageOfSubscriptions($pageNumOfThisAPICall, $id = null) {
         if( $id ) $this->setTagId($id);
-        $request_url = $this->request_url . '/'.$this->id.'/subscriptions?api_secret='.$this->api_secret_key;
+        $request_url = $this->request_url . '/'.
+            $this->id.'/subscriptions?api_secret='.$this->api_secret_key .
+            "&page=" . $pageNumOfThisAPICall .
+            "&subscriber_state=active";
         $response = $this->curl($request_url);
         return $response;
     }

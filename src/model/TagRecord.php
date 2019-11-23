@@ -5,6 +5,7 @@ class TagRecord {
     private $tag_id;
     private $tag_name;
     private $tag_map_id;
+    private $tag_last_updated;
 
     public function __construct() {
 
@@ -30,6 +31,10 @@ class TagRecord {
         $this->tag_map_id = $pValue;
     }
 
+    public function setLastUpdated($pValue) {
+        $this->tag_last_updated = $pValue;
+    }
+
     public function getTagID() {
         return $this->tag_id;
     }
@@ -40,6 +45,10 @@ class TagRecord {
 
     public function getTagMapID() {
         return $this->tag_map_id;
+    }
+
+    public function getTagLastUpdated() {
+        return $this->tag_last_updated;
     }
 
 }

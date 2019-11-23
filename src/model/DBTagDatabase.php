@@ -15,7 +15,7 @@ class DBTagDatabase implements ITagDatabase {
         $this->conn = $dbConnection->createConnection();
 
         //TODO refactor this into a call in a utilities class or DBConnection model
-        $queryString = "SELECT t.tag_id, t.tag_name, t.tag_map_id FROM tag t ORDER BY t.tag_map_id, t.tag_name;";
+        $queryString = "SELECT t.tag_id, t.tag_name, t.tag_map_id, t.last_updated FROM tag t ORDER BY t.tag_map_id, t.tag_name;";
         $preparedStatement = $this->conn->prepare($queryString);
         $preparedStatement->execute();
 
@@ -32,6 +32,7 @@ class DBTagDatabase implements ITagDatabase {
             $tagRecord->setTagID($resultArrayRow['tag_id']);
             $tagRecord->setTagName($resultArrayRow['tag_name']);
             $tagRecord->setTagMapID($resultArrayRow['tag_map_id']);
+            $tagRecord->setLastUpdated($resultArrayRow['last_updated']);
             $tagRecordArray[] = $tagRecord;
         }
 

@@ -56,6 +56,7 @@ class DBConnection {
         $this->truncateTable($dbConnection, "subscriber");
     }
 
+
     public function truncateTable($dbConnection, $tableName) {
         $truncateTableQuery = "TRUNCATE TABLE ". $tableName .";";
         $dbConnection->query($truncateTableQuery);
