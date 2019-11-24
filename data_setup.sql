@@ -49,6 +49,7 @@ CREATE TABLE tag_bk (
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (452865, 'Start General',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (609574, 'Start DSA Sales 02',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (446786, 'Start DSA Sales 01',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (980720, 'Start Content 11',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (980720, 'Start Content 10',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (823846, 'Start Content 09',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (715082, 'Start Content 08',1);
@@ -61,6 +62,7 @@ INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (435165, 'Start Content 02
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (390939, 'Start Content 01',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (609575, 'Done DSA Sales 02',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (446787, 'Done DSA Sales 01',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (980723, 'Done Content 11',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (980723, 'Done Content 10',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (823848, 'Done Content 09',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (715084, 'Done Content 08',1);
