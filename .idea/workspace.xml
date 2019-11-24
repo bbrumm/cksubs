@@ -32,10 +32,10 @@
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -48,7 +48,7 @@
           <entry key="js" value="1" />
           <entry key="json" value="28" />
           <entry key="md" value="1" />
-          <entry key="php" value="216" />
+          <entry key="php" value="217" />
           <entry key="sql" value="1" />
           <entry key="xml" value="5" />
           <entry key="yaml" value="1" />
@@ -62,7 +62,7 @@
           <entry key="JSON" value="28" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="216" />
+          <entry key="PHP" value="217" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="5" />
@@ -102,7 +102,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
+            <state relative-caret-position="1605">
               <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
             </state>
           </provider>
@@ -129,7 +129,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/DBTagDatabase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
+            <state relative-caret-position="390">
               <caret line="26" column="81" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="81" />
             </state>
           </provider>
@@ -138,17 +138,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/APIController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
+            <state relative-caret-position="2070">
               <caret line="138" column="39" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/api_controller_test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="112" column="63" lean-forward="true" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
+            <state relative-caret-position="1656">
+              <caret line="111" column="48" lean-forward="true" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/TagMatchUpdater_test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="244" column="45" lean-forward="true" selection-start-line="244" selection-start-column="45" selection-end-line="244" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -405,7 +414,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.phpunit">
+  <component name="RunManager" selected="PHPUnit.TagMatchUpdaterTest.test_UpdateTagsToDatabase_Ignored">
     <configuration name="APIControllerTest.testRequiredTagsAreInTable" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="APIControllerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/api_controller_test.php" method="testRequiredTagsAreInTable" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
@@ -422,8 +431,8 @@
       <TestRunner class="TagDisplayerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagDisplayer_test.php" method="test_TagWithIgnoreIsUnChecked" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagDisplayerTest.test_TagWithMatchIsChecked" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagDisplayerTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagDisplayer_test.php" method="test_TagWithMatchIsChecked" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagMatchUpdaterTest.test_UpdateTagsToDatabase_Ignored" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagMatchUpdaterTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagMatchUpdater_test.php" method="test_UpdateTagsToDatabase_Ignored" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -440,19 +449,19 @@
     <list>
       <item itemvalue="PHP Web Page.PHP Webpage" />
       <item itemvalue="PHPUnit.phpunit" />
-      <item itemvalue="PHPUnit.TagDisplayerTest.test_TagWithMatchIsChecked" />
       <item itemvalue="PHPUnit.TagDisplayerTest.test_TagWithIgnoreIsUnChecked" />
       <item itemvalue="PHPUnit.DBConnection_test.test_ValidQuery" />
       <item itemvalue="PHPUnit.APIControllerTest.test_APISubscriberResponseIntoDatabase" />
       <item itemvalue="PHPUnit.APIControllerTest.testRequiredTagsAreInTable" />
+      <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateTagsToDatabase_Ignored" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.TagMatchUpdaterTest.test_UpdateTagsToDatabase_Ignored" />
         <item itemvalue="PHPUnit.APIControllerTest.testRequiredTagsAreInTable" />
         <item itemvalue="PHPUnit.APIControllerTest.test_APISubscriberResponseIntoDatabase" />
         <item itemvalue="PHPUnit.DBConnection_test.test_ValidQuery" />
         <item itemvalue="PHPUnit.TagDisplayerTest.test_TagWithIgnoreIsUnChecked" />
-        <item itemvalue="PHPUnit.TagDisplayerTest.test_TagWithMatchIsChecked" />
       </list>
     </recent_temporary>
   </component>
@@ -479,6 +488,7 @@
       <workItem from="1567924825664" duration="1359000" />
       <workItem from="1574478472957" duration="6961000" />
       <workItem from="1574622667438" duration="3314000" />
+      <workItem from="1574627035575" duration="238000" />
     </task>
     <servers />
   </component>
@@ -515,17 +525,18 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86152000" />
+    <option name="totallyTimeSpent" value="86390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1417" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49950248" visible="true" weight="0.12748213" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49950248" visible="true" weight="0.12827641" />
       <window_info id="Structure" order="1" sideWeight="0.5004975" side_tool="true" weight="0.12748213" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981133" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24150944" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24150944" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3154717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -754,13 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TagMatchUpdater_test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3720">
-          <caret line="248" selection-start-line="248" selection-end-line="248" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15360">
@@ -831,27 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loadAPITagSubscribers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TagDisplayer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/APITagSubscriberResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/TagDisplayer_test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -887,13 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/TagRecord.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -922,24 +898,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loadAPITagSubscribers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TagDisplayer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/DBTagDatabase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
+        <state relative-caret-position="390">
           <caret line="26" column="81" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/APIController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
+        <state relative-caret-position="2070">
           <caret line="138" column="39" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/APITagSubscriberResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/api_controller_test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="112" column="63" lean-forward="true" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
+        <state relative-caret-position="1656">
+          <caret line="111" column="48" lean-forward="true" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TagMatchUpdater_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="244" column="45" lean-forward="true" selection-start-line="244" selection-start-column="45" selection-end-line="244" selection-end-column="45" />
         </state>
       </provider>
     </entry>

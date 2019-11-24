@@ -73,3 +73,5 @@ INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (502795, 'Done Content 04'
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (502788, 'Done Content 03',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (964507, 'Done Content 02',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (429090, 'Done Content 01',1);
+
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (435103, 'DONESEQ Engagement DB Normalisation',2);
