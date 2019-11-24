@@ -115,29 +115,32 @@ class APIControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     /****** Private Functions ******/
+    private function truncateTable($conn, $tableName) {
+        $conn->query("TRUNCATE TABLE ". $tableName .";");
+    }
     private function copySubscribersToBackupTable($conn) {
-        $conn->query("TRUNCATE TABLE subscriber_bk;");
+        $this->truncateTable($conn, "subscriber_bk");
         $backupQueryString = "INSERT INTO subscriber_bk (subscriber_id, first_name, email_address, subscriber_state, subscriber_created_at)
           SELECT subscriber_id, first_name, email_address, subscriber_state, subscriber_created_at FROM subscriber;";
         $conn->query($backupQueryString);
     }
 
     private function copySubscribersFromBackupToMainTable($conn) {
-        $conn->query("TRUNCATE TABLE subscriber;");
+        $this->truncateTable($conn, "subscriber");
         $backupQueryString = "INSERT INTO subscriber (subscriber_id, first_name, email_address, subscriber_state, subscriber_created_at)
           SELECT subscriber_id, first_name, email_address, subscriber_state, subscriber_created_at FROM subscriber_bk;";
         $conn->query($backupQueryString);
     }
 
     private function copyTagsToBackupTable($conn) {
-        $conn->query("TRUNCATE TABLE tag_bk;");
+        $this->truncateTable($conn, "tag_bk");
         $backupQueryString = "INSERT INTO tag_bk (tag_id, tag_name, tag_map_id, last_updated)
           SELECT tag_id, tag_name, tag_map_id, last_updated FROM tag;";
         $conn->query($backupQueryString);
     }
 
     private function copyTagsFromBackupToMainTable($conn) {
-        $conn->query("TRUNCATE TABLE tag;");
+        $this->truncateTable($conn, "tag");
         $backupQueryString = "INSERT INTO tag (tag_id, tag_name, tag_map_id, last_updated)
           SELECT tag_id, tag_name, tag_map_id, last_updated FROM tag_bk;";
         $conn->query($backupQueryString);
