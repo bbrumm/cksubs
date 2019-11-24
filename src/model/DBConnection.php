@@ -6,6 +6,7 @@ class DBConnection {
     const DB_HOSTNAME = "localhost";
     const DB_NAME = "ck_subscribers";
 
+
     public function __construct() {
         if($this->isCurrentEnvironmentDev()) {
             $rootFolder = __DIR__ . "/../../";
@@ -15,7 +16,8 @@ class DBConnection {
     }
 
     private function isCurrentEnvironmentDev() {
-        return (getenv("ENVIRONMENT") == "dev");
+        //return (getenv("ENVIRONMENT") == "dev");
+        return (getenv("HOME") == "/Users/BB");
     }
 
     private function isCurrentEnvironmentTravis() {
@@ -68,11 +70,6 @@ class DBConnection {
         $dbConnection->query($queryString);
     }
 
-    /*
-    public function runQuery($dbConnection, $queryString) {
-        $dbConnection->query($queryString);
-    }
-    */
 
 
 }

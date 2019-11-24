@@ -10,8 +10,8 @@ class APITagResponse_test extends \PHPUnit\Framework\TestCase
     }
 
     public function test_GetSinglePageOfTags() {
-        $subscriberResponse = new APITagResponse();
-        $response = $subscriberResponse->getPageOfTags();
+        $tagResponse = new APITagResponse();
+        $response = $tagResponse->getPageOfTags();
 
         $expectedCountGreaterThan = 1;
         $actualCount = count($response->tags);

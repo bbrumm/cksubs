@@ -40,16 +40,31 @@ class APIController {
         echo json_encode(array('message'=>"API done"));
     }
 
+    public function loadSinglePageOfSubscribers(ISubscriberResponse $subscriberResponse) {
+        $this->updateJsonWithSubsProgress(0);
+        $dbConnection = new DBConnection();
+        $conn = $dbConnection->createConnection();
+        $dbConnection->resetSubscriberTable($conn);
+
+        //$this->insertAllSubscribersFromAPI($subscriberResponse, $conn);
+        $this->getSinglePageOfSubscribers($subscriberResponse, 1, $conn);
+        echo json_encode(array('message'=>"API done"));
+    }
+
     private function insertAllSubscribersFromAPI(ISubscriberResponse $subscriberResponse, $conn) {
         $pageNumberCount = 1;
         for ($pageNumOfThisAPICall = 1; $pageNumOfThisAPICall <= $pageNumberCount; $pageNumOfThisAPICall++) {
-            $response = $subscriberResponse->getPageOfSubscribers($pageNumOfThisAPICall);
-            //print_r($response);
-            $this->insertAllSubscribers($response, $conn);
-            $pageNumberCount = $this->updateTotalPageNumberFromAPIResponse($response);
-            $pctComplete = round($pageNumOfThisAPICall/$pageNumberCount,2);
-            $this->updateJsonWithSubsProgress($pctComplete);
+            $pageNumberCount = $this->getSinglePageOfSubscribers($subscriberResponse, $pageNumOfThisAPICall, $conn);
         }
+    }
+
+    private function getSinglePageOfSubscribers($subscriberResponse, $pageNumOfThisAPICall, $conn) {
+        $response = $subscriberResponse->getPageOfSubscribers($pageNumOfThisAPICall);
+        $this->insertAllSubscribers($response, $conn);
+        $pageNumberCount = $this->updateTotalPageNumberFromAPIResponse($response);
+        $pctComplete = round($pageNumOfThisAPICall/$pageNumberCount,2);
+        $this->updateJsonWithSubsProgress($pctComplete);
+        return $pageNumberCount;
     }
 
     //Write out the progress to a JSON file, which is used to update the index page.

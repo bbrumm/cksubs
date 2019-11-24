@@ -39,7 +39,7 @@ class DBConnection_test extends \PHPUnit\Framework\TestCase
     //TODO refactor this into a public method as it is duplicated
     private function isCurrentEnvironmentDev() {
         //return ($_SERVER["HTTP_HOST"] == "localhost:8888");
-        return (getenv("ENVIRONMENT") == "dev");
+        return (getenv("HOME") == "/Users/BB");
     }
 
 

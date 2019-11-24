@@ -86,7 +86,7 @@ class TagDisplayerTest extends \PHPUnit\Framework\TestCase {
             "<td><div class='form-check'>" .
             "<input id='1_hidden' type='hidden' value='2' name='1'>" .
             "<input class='form-check-input' type='checkbox' value='1' name='1' id='1' checked>" .
-            "</div></td></tr>";
+            "</div>";
         $actualResult = $tagDisplayer->prepareTagsForDisplay($tagArray);
         $this->assertContains($expectedTableRow, $actualResult);
     }
@@ -103,7 +103,7 @@ class TagDisplayerTest extends \PHPUnit\Framework\TestCase {
             "<td><div class='form-check'>" .
             "<input id='12324536_hidden' type='hidden' value='2' name='12324536'>" .
             "<input class='form-check-input' type='checkbox' value='1' name='12324536' id='12324536' >" .
-            "</div></td></tr>";
+            "</div>";
         $actualResult = $tagDisplayer->prepareTagsForDisplay($tagArray);
         $this->assertContains($expectedTableRow, $actualResult);
     }
