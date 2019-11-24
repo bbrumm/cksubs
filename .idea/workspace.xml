@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07869da8-bd87-41d2-b9db-155e9dd1125e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress.json" beforeDir="false" afterPath="$PROJECT_DIR$/progress.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/APIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/APIController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DBConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DBConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/APITagResponse_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/APITagResponse_test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DBConnection_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DBConnection_test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TagDisplayer_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TagDisplayer_test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/api_controller_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api_controller_test.php" afterDir="false" />
-    </list>
+    <list default="true" id="07869da8-bd87-41d2-b9db-155e9dd1125e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +26,7 @@
     <session id="396024863">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
@@ -86,7 +77,7 @@
           <entry key="js" value="30" />
           <entry key="json" value="113" />
           <entry key="md" value="37" />
-          <entry key="php" value="23326" />
+          <entry key="php" value="23414" />
           <entry key="xml" value="36" />
           <entry key="yaml" value="5" />
           <entry key="yml" value="19" />
@@ -98,7 +89,7 @@
           <entry key="JSON" value="113" />
           <entry key="JavaScript" value="30" />
           <entry key="Markdown" value="37" />
-          <entry key="PHP" value="23326" />
+          <entry key="PHP" value="23414" />
           <entry key="PLAIN_TEXT" value="80" />
           <entry key="XML" value="36" />
           <entry key="YAML" value="24" />
@@ -156,8 +147,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/api_controller_test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1169">
-              <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+            <state relative-caret-position="274">
+              <caret line="112" column="63" lean-forward="true" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -487,14 +478,11 @@
       <workItem from="1566547593752" duration="1164000" />
       <workItem from="1567924825664" duration="1359000" />
       <workItem from="1574478472957" duration="6961000" />
-      <workItem from="1574622667438" duration="3180000" />
+      <workItem from="1574622667438" duration="3314000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="APIControllerTest_testRequiredTagsAreInTable - 2019.11.25 at 06h 56m 03s.xml">
-      <configuration name="APIControllerTest.testRequiredTagsAreInTable" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="APIControllerTest_testRequiredTagsAreInTable - 2019.11.25 at 06h 57m 48s.xml">
       <configuration name="APIControllerTest.testRequiredTagsAreInTable" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -522,20 +510,22 @@
     <history-entry file="phpunit - 2019.11.25 at 07h 04m 02s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="phpunit - 2019.11.25 at 07h 05m 56s.xml">
+      <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86018000" />
+    <option name="totallyTimeSpent" value="86152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1417" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49950248" visible="true" weight="0.12748213" />
       <window_info id="Structure" order="1" sideWeight="0.5004975" side_tool="true" weight="0.12748213" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981133" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24150944" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24150944" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3154717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -567,8 +557,6 @@
       <configuration name="PHPUnitRunConfigurationType">
         <watch expression="getenv(&quot;ENVIRONMENT&quot;)" />
         <watch expression="getenv()" language="PHP" />
-        <watch expression="$resultRowCount[$i]['tag_name']" />
-        <watch expression="$resultRowCount[0]" language="PHP" />
       </configuration>
     </watches-manager>
   </component>
@@ -950,8 +938,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/api_controller_test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1169">
-          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+        <state relative-caret-position="274">
+          <caret line="112" column="63" lean-forward="true" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
         </state>
       </provider>
     </entry>

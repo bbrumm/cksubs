@@ -22,6 +22,7 @@ CREATE TABLE tag (
   tag_id int(10) DEFAULT NULL,
   tag_name varchar(200) DEFAULT NULL,
   tag_map_id INT(1),
+  last_updated DATETIME,
   KEY idx_tag_id (tag_id),
   FOREIGN KEY fk_tag_map (tag_map_id)
   REFERENCES tag_map(tag_map_id)
@@ -37,8 +38,28 @@ CREATE TABLE subscriber_bk (
   KEY idx_sub_id (subscriber_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (1, 'test tag', 1);
-INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (390939, 'Start Content 01', 1);
-INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (429090, 'Done Content 01', 1);
-INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (435103, 'DONESEQ Engagement DB Normalisation', 2);
-INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (514580, 'Start Content 06', 1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (452865, 'Start General',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (609574, 'Start DSA Sales 02',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (446786, 'Start DSA Sales 01',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (980720, 'Start Content 10',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (823846, 'Start Content 09',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (715082, 'Start Content 08',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (659105, 'Start Content 07',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (514580, 'Start Content 06',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (508869, 'Start Content 05',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (502794, 'Start Content 04',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (502787, 'Start Content 03',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (435165, 'Start Content 02',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (390939, 'Start Content 01',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (609575, 'Done DSA Sales 02',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (446787, 'Done DSA Sales 01',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (980723, 'Done Content 10',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (823848, 'Done Content 09',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (715084, 'Done Content 08',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (659106, 'Done Content 07',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (514581, 'Done Content 06',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (508870, 'Done Content 05',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (502795, 'Done Content 04',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (502788, 'Done Content 03',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (964507, 'Done Content 02',1);
+INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (429090, 'Done Content 01',1);
