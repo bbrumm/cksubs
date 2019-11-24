@@ -38,6 +38,14 @@ CREATE TABLE subscriber_bk (
   KEY idx_sub_id (subscriber_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE tag_bk (
+  tag_id int(10) DEFAULT NULL,
+  tag_name varchar(200) DEFAULT NULL,
+  tag_map_id int(1) DEFAULT NULL,
+  last_updated datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (452865, 'Start General',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (609574, 'Start DSA Sales 02',1);
 INSERT INTO tag (tag_id, tag_name, tag_map_id) VALUES (446786, 'Start DSA Sales 01',1);
