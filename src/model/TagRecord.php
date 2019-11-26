@@ -36,11 +36,19 @@ class TagRecord {
     }
 
     public function setTagMapID($pValue) {
-        $this->tag_map_id = $pValue;
+        if (is_numeric($pValue)) {
+            $this->tag_map_id = $pValue;
+        } else {
+            throw new InvalidArgumentException;
+        }
     }
 
     public function setLastUpdated($pValue) {
-        $this->tag_last_updated = $pValue;
+        if ($this->validateDate($pValue)) {
+            $this->tag_last_updated = $pValue;
+        } else {
+            throw new InvalidArgumentException;
+        }
     }
 
     public function getTagID() {
@@ -55,8 +63,14 @@ class TagRecord {
         return $this->tag_map_id;
     }
 
-    public function getTagLastUpdated() {
+    public function getLastUpdated() {
         return $this->tag_last_updated;
+    }
+
+    private function validateDate($date, $format = 'Y-m-d H:i:s')
+    {
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) === $date;
     }
 
 }

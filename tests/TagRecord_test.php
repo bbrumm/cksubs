@@ -2,26 +2,7 @@
 require_once("src/model/TagRecord.php");
 
 class TagRecordTest extends \PHPUnit\Framework\TestCase {
-
-    /*
-     * Tests to write:
-     * tag name number
-     * tag name text - valid
-     * tag name long text
-     * tag name null
-     * tag name empty string
-     * tag map id number
-     * tag map id text
-     * tag map id null
-     * tag map id empty string
-     * last updated number
-     * last updated text
-     * last updated invalid date
-     * last updated valid date
-     * last updated null
-     * last updated empty string
-     */
-
+    
 //    Test Tag ID
     public function test_TagID_ValidNumber() {
         $tagIDToUse = 4;
@@ -93,6 +74,91 @@ class TagRecordTest extends \PHPUnit\Framework\TestCase {
         $tagNameToUse = "";
         $tagRecord = new TagRecord();
         $tagRecord->setTagName($tagNameToUse);
+    }
+
+    //    Test Tag Map ID
+    public function test_TagMapID_ValidNumber() {
+        $tagMapIDToUse = 4;
+        $tagRecord = new TagRecord();
+        $tagRecord->setTagMapID($tagMapIDToUse);
+
+        $expectedValue = $tagRecord->getTagMapID();
+        $this->assertEquals($expectedValue, $tagMapIDToUse);
+    }
+
+    public function test_TagMapID_InvalidText() {
+        $this->expectException("InvalidArgumentException");
+        $tagMapIDToUse = "some words here";
+        $tagRecord = new TagRecord();
+        $tagRecord->setTagMapID($tagMapIDToUse);
+    }
+
+    public function test_TagMapID_Null() {
+        $this->expectException("InvalidArgumentException");
+        $tagMapIDToUse = null;
+        $tagRecord = new TagRecord();
+        $tagRecord->setTagMapID($tagMapIDToUse);
+    }
+
+    public function test_TagMapID_EmptyString() {
+        $this->expectException("InvalidArgumentException");
+        $tagMapIDToUse = "";
+        $tagRecord = new TagRecord();
+        $tagRecord->setTagMapID($tagMapIDToUse);
+    }
+
+//    Test Last Updated Date
+    public function test_TagLastUpdated_DateValid() {
+        $this->expectException("InvalidArgumentException");
+
+        $tagLastUpdatedDateToUse = "2019-11-01";
+        $tagRecord = new TagRecord();
+        $tagRecord->setLastUpdated($tagLastUpdatedDateToUse);
+    }
+
+    public function test_TagLastUpdated_DateTime() {
+        $tagLastUpdatedDateToUse = "2019-11-23 15:49:47";
+        $tagRecord = new TagRecord();
+        $tagRecord->setLastUpdated($tagLastUpdatedDateToUse);
+
+        $expectedValue = $tagRecord->getLastUpdated();
+        $this->assertEquals($expectedValue, $tagLastUpdatedDateToUse);
+    }
+
+    public function test_TagLastUpdated_DateInvalid() {
+        $this->expectException("InvalidArgumentException");
+
+        $tagLastUpdatedDateToUse = "2019-11-41";
+        $tagRecord = new TagRecord();
+        $tagRecord->setLastUpdated($tagLastUpdatedDateToUse);
+    }
+
+    public function test_TagLastUpdated_Number() {
+        $this->expectException("InvalidArgumentException");
+        $tagLastUpdatedDateToUse = 45;
+        $tagRecord = new TagRecord();
+        $tagRecord->setLastUpdated($tagLastUpdatedDateToUse);
+    }
+
+    public function test_TagLastUpdated_Text() {
+        $this->expectException("InvalidArgumentException");
+        $tagLastUpdatedDateToUse = "something else";
+        $tagRecord = new TagRecord();
+        $tagRecord->setLastUpdated($tagLastUpdatedDateToUse);
+    }
+
+    public function test_TagLastUpdated_Null() {
+        $this->expectException("InvalidArgumentException");
+        $tagLastUpdatedDateToUse = null;
+        $tagRecord = new TagRecord();
+        $tagRecord->setLastUpdated($tagLastUpdatedDateToUse);
+    }
+
+    public function test_TagLastUpdated_EmptyString() {
+        $this->expectException("InvalidArgumentException");
+        $tagLastUpdatedDateToUse = "";
+        $tagRecord = new TagRecord();
+        $tagRecord->setLastUpdated($tagLastUpdatedDateToUse);
     }
 
 

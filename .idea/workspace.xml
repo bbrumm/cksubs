@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07869da8-bd87-41d2-b9db-155e9dd1125e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/TagRecord_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/TagDisplayer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TagDisplayer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/TagRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TagRecord.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TagRecord_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TagRecord_test.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +53,7 @@
           <entry key="js" value="1" />
           <entry key="json" value="28" />
           <entry key="md" value="1" />
-          <entry key="php" value="220" />
+          <entry key="php" value="223" />
           <entry key="sql" value="1" />
           <entry key="xml" value="5" />
           <entry key="yaml" value="1" />
@@ -66,7 +67,7 @@
           <entry key="JSON" value="28" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="220" />
+          <entry key="PHP" value="223" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="5" />
@@ -81,7 +82,7 @@
           <entry key="js" value="30" />
           <entry key="json" value="113" />
           <entry key="md" value="37" />
-          <entry key="php" value="24446" />
+          <entry key="php" value="24748" />
           <entry key="xml" value="36" />
           <entry key="yaml" value="5" />
           <entry key="yml" value="19" />
@@ -93,7 +94,7 @@
           <entry key="JSON" value="113" />
           <entry key="JavaScript" value="30" />
           <entry key="Markdown" value="37" />
-          <entry key="PHP" value="24446" />
+          <entry key="PHP" value="24748" />
           <entry key="PLAIN_TEXT" value="80" />
           <entry key="XML" value="36" />
           <entry key="YAML" value="24" />
@@ -104,28 +105,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1605">
-              <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loadAPITagSubscribers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/TagDisplayer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -133,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/DBTagDatabase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="81" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="81" />
+            <state relative-caret-position="319">
+              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -142,8 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/APIController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="138" column="39" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
+            <state relative-caret-position="-2">
+              <caret line="311" column="44" selection-start-line="311" selection-start-column="44" selection-end-line="311" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -166,20 +149,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/TagRecord_test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
+            <state relative-caret-position="60">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/TagRecord.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+            <state relative-caret-position="478">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/TagDisplayer_test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2">
+              <caret line="65" column="80" lean-forward="true" selection-start-line="65" selection-start-column="80" selection-end-line="65" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -226,6 +218,7 @@
       <find>setTagID</find>
       <find>createTagRecord</find>
       <find>expectException</find>
+      <find>getTagLast</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -283,8 +276,8 @@
         <option value="$PROJECT_DIR$/src/controller/APIController.php" />
         <option value="$PROJECT_DIR$/tests/api_controller_test.php" />
         <option value="$PROJECT_DIR$/tests/TagMatchUpdater_test.php" />
-        <option value="$PROJECT_DIR$/tests/TagRecord_test.php" />
         <option value="$PROJECT_DIR$/src/model/TagRecord.php" />
+        <option value="$PROJECT_DIR$/tests/TagRecord_test.php" />
       </list>
     </option>
   </component>
@@ -358,7 +351,7 @@
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="2560" />
     <option name="height" value="1417" />
@@ -441,24 +434,24 @@
     </option>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit">
-    <configuration name="TagRecordTest.test_TagName_EmptyString" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagName_EmptyString" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagRecordTest.test_TagLastUpdated_DateTime" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagLastUpdated_DateTime" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagRecordTest.test_TagName_LongText" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagName_LongText" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagRecordTest.test_TagLastUpdated_DateValid" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagLastUpdated_DateValid" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagRecordTest.test_TagName_Null" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagName_Null" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagRecordTest.test_TagLastUpdated_Null" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagLastUpdated_Null" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagRecordTest.test_TagName_Number" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagName_Number" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagRecordTest.test_TagLastUpdated_Number" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagLastUpdated_Number" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="TagRecordTest.test_TagName_ValidText" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagName_ValidText" scope="Method" use_alternative_configuration_file="true" />
+    <configuration name="TagRecordTest.test_TagLastUpdated_Text" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="TagRecordTest" configuration_file="$PROJECT_DIR$/phpunitstorm.xml" file="$PROJECT_DIR$/tests/TagRecord_test.php" method="test_TagLastUpdated_Text" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -475,19 +468,19 @@
     <list>
       <item itemvalue="PHP Web Page.PHP Webpage" />
       <item itemvalue="PHPUnit.phpunit" />
-      <item itemvalue="PHPUnit.TagRecordTest.test_TagName_ValidText" />
-      <item itemvalue="PHPUnit.TagRecordTest.test_TagName_Number" />
-      <item itemvalue="PHPUnit.TagRecordTest.test_TagName_LongText" />
-      <item itemvalue="PHPUnit.TagRecordTest.test_TagName_Null" />
-      <item itemvalue="PHPUnit.TagRecordTest.test_TagName_EmptyString" />
+      <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_Null" />
+      <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_Text" />
+      <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_Number" />
+      <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_DateTime" />
+      <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_DateValid" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.TagRecordTest.test_TagName_EmptyString" />
-        <item itemvalue="PHPUnit.TagRecordTest.test_TagName_Null" />
-        <item itemvalue="PHPUnit.TagRecordTest.test_TagName_LongText" />
-        <item itemvalue="PHPUnit.TagRecordTest.test_TagName_Number" />
-        <item itemvalue="PHPUnit.TagRecordTest.test_TagName_ValidText" />
+        <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_DateValid" />
+        <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_DateTime" />
+        <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_Number" />
+        <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_Text" />
+        <item itemvalue="PHPUnit.TagRecordTest.test_TagLastUpdated_Null" />
       </list>
     </recent_temporary>
   </component>
@@ -515,47 +508,47 @@
       <workItem from="1574478472957" duration="6961000" />
       <workItem from="1574622667438" duration="3314000" />
       <workItem from="1574627035575" duration="277000" />
-      <workItem from="1574750683071" duration="1390000" />
+      <workItem from="1574750683071" duration="2280000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="phpunit - 2019.11.26 at 18h 19m 49s.xml">
+    <history-entry file="TagRecordTest_test_TagLastUpdated_EmptyString - 2019.11.26 at 18h 32m 57s.xml">
+      <configuration name="TagRecordTest.test_TagLastUpdated_EmptyString" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TagRecordTest_test_TagLastUpdated_Null - 2019.11.26 at 18h 32m 59s.xml">
+      <configuration name="TagRecordTest.test_TagLastUpdated_Null" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TagRecordTest_test_TagLastUpdated_Text - 2019.11.26 at 18h 33m 00s.xml">
+      <configuration name="TagRecordTest.test_TagLastUpdated_Text" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="TagRecordTest_test_TagLastUpdated_Number - 2019.11.26 at 18h 33m 01s.xml">
+      <configuration name="TagRecordTest.test_TagLastUpdated_Number" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="phpunit - 2019.11.26 at 18h 33m 11s.xml">
       <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_ValidText - 2019.11.26 at 18h 20m 46s.xml">
-      <configuration name="TagRecordTest.test_TagName_ValidText" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="phpunit - 2019.11.26 at 18h 35m 29s.xml">
+      <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_Number - 2019.11.26 at 18h 21m 22s.xml">
-      <configuration name="TagRecordTest.test_TagName_Number" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="TagRecordTest_test_TagLastUpdated_DateTime - 2019.11.26 at 18h 36m 56s.xml">
+      <configuration name="TagRecordTest.test_TagLastUpdated_DateTime" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_LongText - 2019.11.26 at 18h 21m 51s.xml">
-      <configuration name="TagRecordTest.test_TagName_LongText" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="phpunit - 2019.11.26 at 18h 37m 59s.xml">
+      <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_Null - 2019.11.26 at 18h 22m 12s.xml">
-      <configuration name="TagRecordTest.test_TagName_Null" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="TagRecordTest_test_TagLastUpdated_DateValid - 2019.11.26 at 18h 38m 28s.xml">
+      <configuration name="TagRecordTest.test_TagLastUpdated_DateValid" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_EmptyString - 2019.11.26 at 18h 22m 34s.xml">
-      <configuration name="TagRecordTest.test_TagName_EmptyString" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_Null - 2019.11.26 at 18h 23m 12s.xml">
-      <configuration name="TagRecordTest.test_TagName_Null" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_EmptyString - 2019.11.26 at 18h 23m 14s.xml">
-      <configuration name="TagRecordTest.test_TagName_EmptyString" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_EmptyString - 2019.11.26 at 18h 23m 41s.xml">
-      <configuration name="TagRecordTest.test_TagName_EmptyString" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="TagRecordTest_test_TagName_EmptyString - 2019.11.26 at 18h 23m 46s.xml">
-      <configuration name="TagRecordTest.test_TagName_EmptyString" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="phpunit - 2019.11.26 at 18h 38m 35s.xml">
+      <configuration name="phpunit" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87819000" />
+    <option name="totallyTimeSpent" value="88709000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1417" extended-state="0" />
+    <frame x="0" y="23" width="2560" height="1417" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49950248" visible="true" weight="0.12907068" />
@@ -648,13 +641,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/subscriber_person_test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -848,13 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TagDisplayer_test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -918,38 +897,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TagDisplayer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/DBTagDatabase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="81" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/APIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="138" column="39" selection-start-line="138" selection-start-column="39" selection-end-line="138" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/api_controller_test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1665">
           <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/APITagSubscriberResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -967,17 +918,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TagRecord_test.php">
+    <entry file="file://$PROJECT_DIR$/src/model/APITagSubscriberResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
+        <state relative-caret-position="90">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/APIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="311" column="44" selection-start-line="311" selection-start-column="44" selection-end-line="311" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TagDisplayer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/DBTagDatabase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="452" column="65" lean-forward="true" selection-start-line="452" selection-start-column="13" selection-end-line="452" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TagDisplayer_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="65" column="80" lean-forward="true" selection-start-line="65" selection-start-column="80" selection-end-line="65" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/TagRecord.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+        <state relative-caret-position="478">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TagRecord_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>

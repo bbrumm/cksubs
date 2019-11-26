@@ -48,7 +48,7 @@ class TagDisplayer {
             $outputData .= "<td>" . $tagInDatabase->getTagName() . "</td>";
             $outputData .= $this->appendCheckboxHTMLCell($tagInDatabase);
             $outputData .= $this->appendTagSubscriberDownloadButton($tagInDatabase);
-            $outputData .= "<td>" . $tagInDatabase->getTagLastUpdated() . "</td>";
+            $outputData .= "<td>" . $tagInDatabase->getLastUpdated() . "</td>";
             $outputData .= "</tr>";
         }
         $outputData .= "</tbody>";
