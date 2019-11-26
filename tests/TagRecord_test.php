@@ -2,7 +2,7 @@
 require_once("src/model/TagRecord.php");
 
 class TagRecordTest extends \PHPUnit\Framework\TestCase {
-    
+
 //    Test Tag ID
     public function test_TagID_ValidNumber() {
         $tagIDToUse = 4;
