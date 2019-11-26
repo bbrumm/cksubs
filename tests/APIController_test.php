@@ -1,7 +1,11 @@
 <?php
 require_once("src/controller/APIController.php");
-require_once("src/model/ArraySubscriberResponse.php");
-require_once("src/model/ArrayTagResponse.php");
+require_once("src/model/SubscriberResponse/ArraySubscriberResponse.php");
+require_once("src/model/SubscriberResponse/SubscriberResponse_NoResults.php");
+require_once("src/model/SubscriberResponse/SubscriberResponse_OneResult.php");
+require_once("src/model/TagResponse/ArrayTagResponse.php");
+require_once("src/model/TagResponse/TagResponse_NoResults.php");
+require_once("src/model/TagResponse/TagResponse_OneResult.php");
 
 class APIControllerTest extends \PHPUnit\Framework\TestCase
 {
@@ -96,6 +100,41 @@ class APIControllerTest extends \PHPUnit\Framework\TestCase
 
         $this->copyTagsFromBackupToMainTable($conn);
     }
+
+    public function test_TagResponse_NoResults() {
+        $this->expectException("Exception");
+        $tagResponse = new TagResponse_NoResults();
+        $apiController = new APIController();
+
+        $apiController->loadTags($tagResponse);
+
+    }
+
+    public function test_TagResponse_OneResult() {
+        $this->expectException("Exception");
+        $tagResponse = new TagResponse_OneResult();
+        $apiController = new APIController();
+
+        $apiController->loadTags($tagResponse);
+    }
+
+    public function test_SubscriberResponse_NoResults() {
+        $this->expectException("Exception");
+        $subscriberResponse = new SubscriberResponse_NoResults();
+        $apiController = new APIController();
+
+        $apiController->loadSubscribers($subscriberResponse);
+    }
+
+    public function test_SubscriberResponse_OneResult() {
+        $this->expectException("Exception");
+        $subscriberResponse = new SubscriberResponse_OneResult();
+        $apiController = new APIController();
+
+        $apiController->loadSubscribers($subscriberResponse);
+    }
+
+
 
     public function testRequiredTagsAreInTable() {
         $dbConnection = new DBConnection();

@@ -1,5 +1,5 @@
 <?php
-require_once("src/model/APISubscriberResponse.php");
+require_once("src/model/SubscriberResponse/APISubscriberResponse.php");
 
 class APISubscriberResponse_test extends \PHPUnit\Framework\TestCase
 {

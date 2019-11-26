@@ -7,8 +7,8 @@ require_once("src/Tag.php");
 require_once("src/Sequence.php");
 require_once('src/config.php');
 
-require_once('src/model/APISubscriberResponse.php');
-require_once('src/model/APITagResponse.php');
+require_once('src/model/SubscriberResponse/APISubscriberResponse.php');
+require_once('src/model/TagResponse/APITagResponse.php');
 require_once('src/model/APITagSubscriberResponse.php');
 require_once("src/model/DBConnection.php");
 require __DIR__ . '/../../vendor/autoload.php';
@@ -33,9 +33,9 @@ class APIController {
 
         $dbConnection = new DBConnection();
         $conn = $dbConnection->createConnection();
-        $dbConnection->resetSubscriberTable($conn);
 
-        $this->insertAllSubscribersFromAPI($subscriberResponse, $conn);
+
+        $this->insertAllSubscribersFromAPI($subscriberResponse, $conn, $dbConnection);
 
         echo json_encode(array('message'=>"API done"));
     }
@@ -44,27 +44,43 @@ class APIController {
         $this->updateJsonWithSubsProgress(0);
         $dbConnection = new DBConnection();
         $conn = $dbConnection->createConnection();
-        $dbConnection->resetSubscriberTable($conn);
+        //$dbConnection->resetSubscriberTable($conn);
 
-        //$this->insertAllSubscribersFromAPI($subscriberResponse, $conn);
-        $this->getSinglePageOfSubscribers($subscriberResponse, 1, $conn);
+        //TODO: refactor this as it has a lot of parameters
+        $this->getSinglePageOfSubscribers($subscriberResponse, 1, $conn, $dbConnection);
         echo json_encode(array('message'=>"API done"));
     }
 
-    private function insertAllSubscribersFromAPI(ISubscriberResponse $subscriberResponse, $conn) {
+    private function insertAllSubscribersFromAPI(ISubscriberResponse $subscriberResponse, $conn, $dbConnection) {
         $pageNumberCount = 1;
         for ($pageNumOfThisAPICall = 1; $pageNumOfThisAPICall <= $pageNumberCount; $pageNumOfThisAPICall++) {
-            $pageNumberCount = $this->getSinglePageOfSubscribers($subscriberResponse, $pageNumOfThisAPICall, $conn);
+            $pageNumberCount = $this->getSinglePageOfSubscribers($subscriberResponse, $pageNumOfThisAPICall, $conn, $dbConnection);
         }
     }
 
-    private function getSinglePageOfSubscribers($subscriberResponse, $pageNumOfThisAPICall, $conn) {
+    private function getSinglePageOfSubscribers($subscriberResponse, $pageNumOfThisAPICall, $conn, $dbConnection) {
         $response = $subscriberResponse->getPageOfSubscribers($pageNumOfThisAPICall);
+        $this->validateSubscriberResponse($response);
+        if ($this->isFirstPage($pageNumOfThisAPICall)) {
+            $dbConnection->resetSubscriberTable($conn);
+        }
+
         $this->insertAllSubscribers($response, $conn);
         $pageNumberCount = $this->updateTotalPageNumberFromAPIResponse($response);
         $pctComplete = round($pageNumOfThisAPICall/$pageNumberCount,2);
         $this->updateJsonWithSubsProgress($pctComplete);
         return $pageNumberCount;
+    }
+
+    private function isFirstPage($pageNumOfThisAPICall) {
+        return $pageNumOfThisAPICall == 1;
+    }
+
+    private function validateSubscriberResponse($subscriberResponse) {
+        $subscriberCount = count($subscriberResponse->subscribers);
+        if ($subscriberCount <= 1) {
+            throw new Exception;
+        }
     }
 
     //Write out the progress to a JSON file, which is used to update the index page.
@@ -76,6 +92,8 @@ class APIController {
         $insertSubscriberQuery = $this->convertSubscriberArrayToSQL($response->subscribers);
         $this->insertSubscribers($conn, $insertSubscriberQuery);
     }
+
+
 
     private function convertSubscriberArrayToSQL($subscriberArray) {
         $insertQuery = "INSERT INTO subscriber (subscriber_id, first_name, email_address, subscriber_state, subscriber_created_at) VALUES ";
@@ -124,6 +142,8 @@ class APIController {
     }
 
     public function loadTags(ITagResponse $tagResponse) {
+
+
         $this->updateJsonWithTagsProgress(0);
 
         $dbConnection = new DBConnection();
@@ -135,14 +155,24 @@ class APIController {
         echo json_encode(array('message'=>"API done"));
     }
 
+
+
     private function insertAllTagsFromAPI(ITagResponse $tagResponse, $conn) {
         $response = $tagResponse->getPageOfTags();
+        $this->validateTagResponse($response);
         $newTagArray = $this->determineNewTags($response, $conn);
         if(count($newTagArray) > 0) {
             $this->insertNewTags($newTagArray, $conn);
         }
         $this->updateJsonWithTagsProgress(1);
 
+    }
+
+    private function validateTagResponse($tagResponse) {
+        $tagCount = count($tagResponse->tags);
+        if ($tagCount <= 1) {
+            throw new Exception;
+        }
     }
 
     private function updateJsonWithTagsProgress($pctComplete) {

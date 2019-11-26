@@ -1,5 +1,5 @@
 <?php
-require_once("src/model/APITagResponse.php");
+require_once("src/model/TagResponse/APITagResponse.php");
 
 class APITagResponse_test extends \PHPUnit\Framework\TestCase
 {
