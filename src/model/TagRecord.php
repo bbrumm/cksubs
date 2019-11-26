@@ -20,11 +20,19 @@ class TagRecord {
     }
 
     public function setTagID($pValue) {
-        $this->tag_id = $pValue;
+        if (is_numeric($pValue)) {
+            $this->tag_id = $pValue;
+        } else {
+            throw new InvalidArgumentException;
+        }
     }
 
     public function setTagName($pValue) {
-        $this->tag_name = $pValue;
+        if(!is_null($pValue) && $pValue <> "") {
+            $this->tag_name = $pValue;
+        } else {
+            throw new InvalidArgumentException;
+        }
     }
 
     public function setTagMapID($pValue) {
