@@ -75,5 +75,5 @@ INSERT INTO tag (tag_id, tag_name, tag_map_id, last_updated) VALUES (964507, 'Do
 INSERT INTO tag (tag_id, tag_name, tag_map_id, last_updated) VALUES (429090, 'Done Content 01',1, '2019-01-01');
 INSERT INTO tag (tag_id, tag_name, tag_map_id, last_updated) VALUES (435103, 'DONESEQ Engagement DB Normalisation',2, '2019-01-01');
 
-INSERT INTO subsciber (subscriber_id, first_name, email_address) VALUES (1, 'Test', 'test@test.com');
-INSERT INTO subsciber (subscriber_id, first_name, email_address) VALUES (2, 'More', 'more@test.com');
+INSERT INTO subscriber (subscriber_id, first_name, email_address) VALUES (1, 'Test', 'test@test.com');
+INSERT INTO subscriber (subscriber_id, first_name, email_address) VALUES (2, 'More', 'more@test.com');
