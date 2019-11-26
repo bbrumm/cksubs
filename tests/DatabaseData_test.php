@@ -11,7 +11,7 @@ class DatabaseData_test extends \PHPUnit\Framework\TestCase {
         $queryResult = $conn->query($queryString);
         $row = $queryResult->fetch();
         $actualCount = $row[0];
-        $this->assertGreaterThan($minCount, $actualCount);
+        $this->assertGreaterThanOrEqual($minCount, $actualCount);
     }
 
     public function test_Tag_TooManyRows() {
@@ -77,7 +77,7 @@ class DatabaseData_test extends \PHPUnit\Framework\TestCase {
         $queryResult = $conn->query($queryString);
         $row = $queryResult->fetch();
         $actualCount = $row[0];
-        $this->assertGreaterThan($minCount, $actualCount);
+        $this->assertGreaterThanOrEqual($minCount, $actualCount);
     }
 
     public function test_Subscriber_TooManyRows() {
